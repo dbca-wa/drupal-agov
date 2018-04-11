@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6006b6954a7854322e7bc442e7396192",
-    "content-hash": "c7202bdda36d6a1b3e10965e25aa49fc",
+    "hash": "44cd9c31ddac11d2ddfbf0a4616720ca",
+    "content-hash": "236ad485264a833e7288affaf1b02304",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3105,6 +3105,49 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/pnx_media_embed"
             }
+        },
+        {
+            "name": "drupal/scheduled_updates",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/scheduled_updates",
+                "reference": "e692a82707ba6f230ee8722b6b73f9d38e9fad97"
+            },
+            "require": {
+                "drupal/core": "*",
+                "drupal/inline_entity_form": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0-alpha6+1-dev",
+                    "datestamp": "1511375287",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "tedbow",
+                    "homepage": "https://www.drupal.org/user/240860"
+                }
+            ],
+            "description": "Create scheduled updates to field values on entities such content, users, and terms.",
+            "homepage": "https://www.drupal.org/project/scheduled_updates",
+            "support": {
+                "source": "http://cgit.drupalcode.org/scheduled_updates"
+            },
+            "time": "2017-11-22 17:35:46"
         },
         {
             "name": "drupal/simple_sitemap",
@@ -6482,7 +6525,8 @@
         "drupal/linky": 20,
         "drupal/page_manager": 20,
         "drupal/password_policy": 20,
-        "drupal/pnx_media_embed": 15
+        "drupal/pnx_media_embed": 15,
+        "drupal/scheduled_updates": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
