@@ -1,1 +1,5 @@
-drupal/
+/drupal/
+/core/
+/vendor/
+/modules/
+/themes/
