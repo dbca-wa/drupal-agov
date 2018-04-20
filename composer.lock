@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c278dd3a46eac45956c972beb2785ea",
+    "content-hash": "47498764b62b2fc91a87b45991fdea17",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2028,32 +2028,29 @@
         },
         {
             "name": "drupal/linkit",
-            "version": "4.3.0",
+            "version": "dev-5.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/linkit",
-                "reference": "8.x-4.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/linkit-8.x-4.3.zip",
-                "reference": "8.x-4.3",
-                "shasum": "e624ea2f18a6100b76a8337e24f7c08df6e2235e"
+                "reference": "1084887a0c4d9f0458c8d60f59ba20c342005101"
             },
             "require": {
                 "drupal/core": "~8.0"
             },
+            "require-dev": {
+                "drupal/imce": "*"
+            },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-4.x": "4.x-dev"
+                    "dev-5.x": "5.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.3",
-                    "datestamp": "1490205830",
+                    "version": "8.x-5.0-beta6+11-dev",
+                    "datestamp": "1520035984",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -2074,7 +2071,8 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/linkit",
                 "issues": "http://drupal.org/project/linkit"
-            }
+            },
+            "time": "2018-03-03T00:11:36+00:00"
         },
         {
             "name": "drupal/linky",
@@ -7419,6 +7417,7 @@
     "stability-flags": {
         "drupal/better_normalizers": 10,
         "drupal/fences": 15,
+        "drupal/linkit": 20,
         "drupal/linky": 15,
         "drupal/page_manager": 10,
         "drupal/pnx_media_embed": 15
