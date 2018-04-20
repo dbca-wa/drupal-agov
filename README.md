@@ -2,8 +2,10 @@
 
 ## Usage
 
-./build.sh - downloads composer and installs drupal/agov dependencies with it, then overlays src/ over web/ (keep modifications in src/)
-./run.sh - runs the project locally on port 8080 using a centos7 php7.1 docker image
+Needs php 7.1+ installed to build (can run anywhere with docker)
+
+ * ./build.sh - downloads composer and installs drupal/agov dependencies with it, then overlays src/ over web/ (keep modifications in src/)
+ * ./run.sh - runs the project locally on port 8080 using a centos7 php7.1 docker image
 
 ## What does the template do?
 
