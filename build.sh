@@ -1,6 +1,8 @@
 #!/bin/bash
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-./composer.phar install --no-interaction --no-ansi --optimize-autoloader
+if [ ! -f ./composer.phar ]; then
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php composer-setup.php
+    php -r "unlink('composer-setup.php');"
+fi
+./composer.phar install
 
