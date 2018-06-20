@@ -1,0 +1,48 @@
+/* 
+Specific style overrides 
+Site: Conservation Commission
+*/
+body.path-frontpage .hero_header_section {
+    color: #ffffff;
+    padding: 20px 0;
+    background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .7)), #617A6D url(/sites/default/files/2018-06/homepage-banner-main.jpg) no-repeat top center;
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+/*
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+*/
+
+}
+
+.hero_header_section {
+    color: #ffffff;
+    padding: 20px 0;
+    background: #617A6D url(../img/main_bg.jpg) no-repeat top center;
+}
+
+[class^='breadcrumbs'] {
+    color: #ffffff;
+    background-color: transparent;
+}
+[class^='breadcrumbs'] a {
+    color: #ffffff;
+    border-bottom: dashed 1px #ffffff;
+}
+[class^='breadcrumbs'] a:hover {
+    color: #ffffff;
+    border-bottom: solid 1px #ffffff;
+}
+
+
+@media (min-width: 768px) {
+body.path-frontpage .hero_header_section {
+    min-height: 500px;
+    padding: 50px 0;
+}
+.hero_header_section {
+    padding-top:0;
+}
+
+}

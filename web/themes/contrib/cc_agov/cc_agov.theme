@@ -1,0 +1,65 @@
+<?php
+
+function cc_agov_preprocess_page(&$variables) {
+
+      // Load the node entity from current route
+        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+                // Load the label of the bundle
+                    $bundle_label = \Drupal::entityTypeManager()
+                          ->getStorage('node_type')
+                                ->load($node->bundle())
+                                      ->label();
+                                          // Set the page title
+         }
+       else {
+            $titles =    $variables['page']['#title'];
+             $t = explode("|",$titles );
+            $variables['title'] = $t[0];
+            $variables['subti'] = $t[1];
+        }
+}
+
+function cc_agov_preprocess_page_title(&$variables) {
+
+ if ($node = \Drupal::routeMatch()->getParameter('node')) {
+     }
+ else {
+      $titles =    $variables['page']['#title'];
+       $t = explode("|",$titles );
+       $variables['title'] = $t[0];
+       $variables['subti'] = $t[1];
+ }
+}
+
+
+function cc_agov_preprocess_breadcrumb(&$variables) {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $titles =    $variables['page']['#title'];
+      $titles = $node->getTitle();
+        if (!empty($titles)) {
+           $t = explode("|",$titles );
+           $variables['bread'] = $t[0];
+//           $variables['breadcrumb'][] = array( 'text' => $t[0]);
+        }
+    }
+   else {
+     $request = \Drupal::request();
+       $route_match = \Drupal::routeMatch();
+       $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+        if (!empty($page_title)) {
+       $t = explode("|",$page_title);
+        //this variable will avaliable in twig file. 
+        if($t[0] != "" && $t[1] != '') { 
+//        $variables['breadcrumb'][] = array( 'text' => $t[0]); 
+         $variables['bread'] = $t[0];
+        }
+        else {
+  //          $variables['breadcrumb'][] = array( 'text' => $page_title);
+             $variables['bread'] = $page_title;
+        }
+        }
+        
+    }
+}
+

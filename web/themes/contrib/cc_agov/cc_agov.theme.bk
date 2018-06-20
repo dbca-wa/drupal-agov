@@ -1,0 +1,93 @@
+<?php
+//function cc_agov_preprocess_page(&$variables) {
+//      $node = \Drupal::routeMatch()->getParameter('node');
+  //    $n = \Drupal::routeMatch()->getParameter('view');
+    //    if ($node) {
+      //      list($t1,$t2) = split('[|]',$node->getTitle());
+      //          $variables['title'] = $node->getTitle() . "one" ;
+        //        $variables['subti'] = $t2;
+        //         }
+//        if($n) {
+  //                  $p = $n->getPageTitle();
+//                    $t = $p->getTitle();
+    //                  list($t1,$t2) = split('[|]',$p);
+      //                              $variables['title'] =  $t1 ;
+        //                               $variables['subti'] = $t2;
+//
+  //               }
+//}
+function cc_agov_preprocess_page(&$variables) {
+
+      // Load the node entity from current route
+        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+                // Load the label of the bundle
+                    $bundle_label = \Drupal::entityTypeManager()
+                          ->getStorage('node_type')
+                                ->load($node->bundle())
+                                      ->label();
+
+                                          // Set the page title
+//                                              $variables['title'] = "ONE"; //i$bundle_label;
+//                                              $variables['subti'] = "TWO";
+                                                }
+
+        else {
+            $titles =    $variables['page']['#title'];
+//             list($t1,$t2) = split('[|]',$titles);
+             $t = explode("|",$titles );
+            $variables['title'] = $t[0];
+             $variables['subti'] = $t[1];
+        }
+//        if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        //                           $tid =  $variables['view']->args[0];
+         //                   $new_title = "VIEW TITLE";
+           //               $route->setDefault('_title', $new_title);
+  //      }
+
+    }
+
+function cc_agov_preprocess_page_title(&$variables) {
+
+ if ($node = \Drupal::routeMatch()->getParameter('node')) {
+     }
+ else {
+      $titles =    $variables['page']['#title'];
+       $t = explode("|",$titles );
+       $variables['title'] = $t[0];
+       $variables['subti'] = $t[1];
+ }
+}
+
+function cc_agov_preprocess_views_view(&$variables) {
+             $view = $variables['view'];
+             $title = $view->getTitle();
+//             list($t1,$t2) = split('[|]',$title);
+//              $variables['title'] = "TWOTWO";
+//              $variables['subti'] = "TWOTWO";
+    }
+      
+
+
+
+
+
+//      $id = $variables['id'];
+//        if( $id == '3' && $variables['view']->args[0]) {
+//             // Get tid from contextual argument of the view
+//             $tid = $variables['view']->args[0];
+            // Load the Term Entity
+//             $term = Term::load($tid);
+            // Term Title
+//          $new_title = $term->getName();
+//            // Set the new Page Title
+//             $request = \Drupal::request();
+//           if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+//              $route->setDefault('_title', $new_title);
+//                $route->setDefault('_title', "TRY");
+//         }
+//       }
+//}
+
+
+
