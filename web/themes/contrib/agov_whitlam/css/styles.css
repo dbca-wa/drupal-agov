@@ -1,1 +1,269 @@
 body>main .button,footer[role='contentinfo'] .button,button,[type="button"],[type="reset"],[type="submit"]{background-color:#4965af;color:#fff;border-color:#3a508b}body>main .button:hover,footer[role='contentinfo'] .button:hover,button:hover,[type="button"]:hover,[type="reset"]:hover,[type="submit"]:hover,body>main .button:focus,footer[role='contentinfo'] .button:focus,button:focus,[type="button"]:focus,[type="reset"]:focus,[type="submit"]:focus{background-color:#3a508b;color:#fff}body>main .button:active,footer[role='contentinfo'] .button:active,button:active,[type="button"]:active,[type="reset"]:active,[type="submit"]:active{background-color:#415b9d}.divider,hr{border-top-width:6px;border-color:#f0f3f5}.icon{margin-right:3.6px;margin-right:.225rem;display:inline-block;width:2rem;height:2rem}header[role='banner'] a,[class^='breadcrumbs'] a,body>main a,footer[role='contentinfo'] a{color:#313131;border-bottom:solid 1px #b2bedf}header[role='banner'] a:hover,header[role='banner'] a:active,header[role='banner'] a:focus,[class^='breadcrumbs'] a:hover,[class^='breadcrumbs'] a:active,[class^='breadcrumbs'] a:focus,body>main a:hover,body>main a:active,body>main a:focus,footer[role='contentinfo'] a:hover,footer[role='contentinfo'] a:active,footer[role='contentinfo'] a:focus{background-color:#b2bedf;color:#313131}:visited{border-color:#b2bedf}.box--with-border{border-top:6px solid #4965af}footer[role='contentinfo']{border-color:#1b2e64}footer[role='contentinfo'] .footer-top{border-color:rgba(187,187,187,0.5);border-width:0 0 3px}.header,header[role='banner']{background-color:#4965af;color:#f0f3f5}.local-nav ul a:hover,.local-nav ul a:focus{border-color:#1b2e64;background-color:#e8ecf5}.more-link a{color:#313131;border-bottom:solid 1px #b2bedf}.search__input--light{color:#f0f3f5;border-color:#f0f3f5}.search__input--light::-webkit-input-placeholder{color:#b2bedf;opacity:1;font-style:normal}.search__input--light::-moz-placeholder{color:#b2bedf;opacity:1;font-style:normal}.search__input--light:-ms-input-placeholder{color:#b2bedf;opacity:1;font-style:normal}.search__input--light:-moz-placeholder{color:#b2bedf;opacity:1;font-style:normal}.search__button--light,.search__button--light:focus,.search__button--light:hover{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg fill%3D'%23fff' width%3D'2048' height%3D'2048' viewBox%3D'0 0 2048 2048' xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath d%3D'M1344 960q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z'%2F%3E%3C%2Fsvg%3E\a")}.site-nav{background-color:#f0f3f5}.site-nav__anchor-active,.site-nav__wrapper .site-nav__list-item>a:hover,.site-nav__wrapper .site-nav__list-item>a:focus,.site-nav__wrapper .site-nav__list-item>a.is-active,.site-nav__wrapper .site-nav__list-item:hover>a,.site-nav__wrapper .site-nav__list-item.opened>a{border-color:#415b9d}.site-nav__wrapper .site-nav__list-item>a{color:#313131}.site-nav__wrapper .site-nav__list-level-2{background-color:#b2bedf}.site-nav__wrapper .site-nav__list-item-level-2>a{color:#313131}.site-nav__wrapper .site-nav__list-item-level-2>a:hover,.site-nav__wrapper .site-nav__list-item-level-2>a:focus{background-color:#4965af;color:#fff}.inline-tab-nav a.is-active{border-color:#1b2e64;background-color:#f0f3f5}.inline-tab-nav a:hover,.inline-tab-nav a:focus{border-color:#1b2e64}
+ 
+
+/***** 
+Department of Biodiversity, Conservation and Attractions
+additions to meet the Digital Services Policy Framework - Website Visual Design and Functional Standard
+URL: http://gcio.wa.gov.au/wp-content/uploads/2016/05/FINAL-Website-Visual-Design-and-Functional-Standard-April-2018-1.pdf
+
+1) FONTS
+2) STANDARDS
+3) LINKS / TITLES / TABS
+4) RESPONSIVE UTILITIES
+5) FEATURES / BLOCKS / DIVIDERS
+6) HEADER
+7) NAVIGATION
+8) FOOTER
+9) BUTTONS
+
+*****/
+
+
+/***** 1 - FONTS *****/
+@import url("https://fonts.googleapis.com/css?family=Heebo:300,500,700,900");
+@import url("https://use.fontawesome.com/releases/v5.0.12/css/all.css");
+
+.lead {
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 2rem;
+}
+
+/***** 2 - STANDARDS *****/
+
+body,
+html { 
+    height: 100%;
+}
+body, html {
+    font-family: Heebo,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    margin: 0px;
+    line-height: 125%;
+    min-width: 320px;
+    background: #fff;
+}
+
+/***** 3 - LINKS / TITLES / TABS *****/
+
+header[role='banner'] a, [class^='breadcrumbs'] a, body>main a, footer[role='contentinfo'] a, footer .footer_links ul li a:hover, footer .footer_links ul li a:focus {
+    color: #fff;
+    border-bottom: dashed 1px #fff;
+    background-color: transparent;
+}
+
+header[role='banner'] a:hover, header[role='banner'] a:active, header[role='banner'] a:focus, [class^='breadcrumbs'] a:hover, [class^='breadcrumbs'] a:active, [class^='breadcrumbs'] a:focus, body>main a:hover, body>main a:active, body>main a:focus {
+    background-color: transparent !IMPORTANT;
+}
+
+.content-main h2, .content-main h2 a:link, .content-main h2 a:visited {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #4C4C4C;
+    margin-top: .5rem !IMPORTANT;
+    margin-bottom: .5rem !IMPORTANT;
+    text-decoration:none;
+}
+ .content-main h2 a:link:after, .content-main h2 a:visited:after  {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: inline-block;
+    font-family: "FontAwesome";
+    content: "\f105";
+}
+
+.content-main h2 a:focus, .content-main h2 a:hover {
+    color:#D14210;
+    text-decoration:none;
+}
+.content-main h2 a:focus:after, .content-main h2 a:hover:after {
+    content: "\f101";
+}
+
+
+footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[role='contentinfo'] a:focus {
+    color:#fff;
+    background-color: transparent !IMPORTANT;
+    border-bottom: 1px solid #fff;
+}
+.inline-tab-nav {
+    border-bottom: solid 1px #D0D0D0;
+}
+.inline-tab-nav a:link, .inline-tab-nav a:visited {
+    text-decoration:none;
+    color: #D14210;
+}
+.inline-tab-nav a.is-current, .inline-tab-nav a.is-active, .inline-tab-nav a:hover {
+    background-color: #f5f5f5;
+    border-color: #D14210;
+}
+/***** 4 - RESPONSIVE UTILITIES *****/
+
+@media (min-width: 768px) {
+
+header > .wrapper { 
+    padding: 1rem 0px;
+}
+
+}
+
+@media print, (max-width: 975px) {
+footer .row {
+    width: 100%;
+    padding-left: 0px;
+}
+footer .row div[class*=column] {
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+footer .footer_acknowledgement p, footer .footer_feedback p, footer .lead, footer h3 {
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+.wrapper {
+    padding: 0 .75em;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 75em;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+/***** 5 - FEATURES / BLOCKS / DIVIDERS *****/
+
+blockquote {
+    background-color: #f5f5f5;
+}
+blockquote::before, blockquote::after {
+    font-family: eebo,Arial,Helvetica,sans-serif;
+    color: #D14210;
+}
+.divider, hr {
+    border-top-width: 6px;
+    border-color: #f5f5f5;
+}
+
+.feature-block__block .feature-block a .feature_title, .feature-block__block .feature-block a .feature_title, .teaser__title a, h3 a { 
+    text-decoration:none
+}
+
+.feature-block__block .feature-block a:hover .feature_title, .feature-block__block .feature-block a:focus .feature_title, .teaser__title a:hover, h3 a:hover {
+    color: #D14210;
+    text-decoration:none;
+}
+
+.box--with-border {
+    border-top: 6px solid #D1420F;
+}
+
+/***** 6 - HEADER *****/
+
+.header, header[role='banner'] {
+    background: #2D2F32;
+    color: #fff;
+}
+
+/***** 7 - NAVIGATION *****/
+
+.site-nav {
+    background: #fff;
+    border-bottom: solid 1px #D0D0D0;
+    box-shadow:none;
+}
+
+.site-nav__wrapper .site-nav__list-item>a {
+    display: block;
+    border-top: solid 7px #fff;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: #2D2F32;
+    font-weight: inherit;
+}
+
+.site-nav__anchor-active, .site-nav__wrapper .site-nav__list-item>a:hover, .site-nav__wrapper .site-nav__list-item>a:focus, .site-nav__wrapper .site-nav__list-item>a.is-active, .site-nav__wrapper .site-nav__list-item:hover>a, .site-nav__wrapper .site-nav__list-item.opened>a  {
+    background-color: transparent;
+    border-color: transparent;
+    border-top: solid 7px #D14210;
+}
+
+.site-nav__wrapper .site-nav__list-level-2 {
+    background: #fff;
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+}
+
+.site-nav__wrapper .site-nav__list-item-level-2>a:hover, .site-nav__wrapper .site-nav__list-item-level-2>a:focus {
+    color: #D14210;
+}
+
+aside .menu-item a:link, aside .menu-item a:visited {
+    text-decoration:none;
+    border-bottom:1px dashed #313131;
+}
+aside .menu-item a:focus, aside .menu-item a:hover {
+    text-decoration:none;
+    border-bottom:1px solid #313131;
+}
+.local-nav ul a {
+    border-bottom:none !IMPORTANT;
+}
+.local-nav ul a:hover {
+    border-color:#D14210;
+    background-color:#f5f5f5;
+}
+
+/***** 8 - FOOTER *****/
+
+footer, footer[role='contentinfo'] {
+    background: #2D2F32;
+    color: #fff;
+    border:none;
+}
+
+footer .footer_feedback {
+    padding: 40px 44px;
+    background: #393c3f;
+}
+footer .row {
+    float: left;
+    display: block;
+    width: calc(100% - 40px);
+    padding-left: 40px;
+    font-size: 0px;
+}
+footer .row div[class*=column] {
+    float: left;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+footer .row .column7 {
+    width: calc((8.3333% * 7) - 40px);
+}
+
+footer .row .column5 {
+    width: calc((8.3333% * 5) - 40px);
+}
+footer .welcome-to-country, footer[role='contentinfo'] .footer-top {
+    padding-bottom: 50px;
+    margin-bottom:50px;
+    border-bottom: solid 1px #4C4D50;
+}
+
+/***** 9 - BUTTONS *****/
+.button.button--large.button--wide {
+    color: #fff;
+    background: #D1420F;
+    border-color: #D1420F;
+    font-size: 1.5em;
+    line-height: 1.25;
+    display: block;
+    padding: 1.75em 2.5em;
+    color: #fff;
+    font-weight: 600;
+}
