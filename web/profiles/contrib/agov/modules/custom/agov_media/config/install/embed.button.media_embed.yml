@@ -1,0 +1,19 @@
+langcode: und
+status: true
+dependencies:
+  module:
+    - entity_embed
+    - media
+label: 'Media Embed'
+id: media_embed
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles: {  }
+  display_plugins:
+    - 'entity_reference:media_thumbnail'
+    - 'view_mode:media.full'
+  entity_browser: media_browser_embed
+  entity_browser_settings:
+    display_review: false
+icon_uuid: 790318D7-39D6-417F-86EF-F73C24E2BD17
