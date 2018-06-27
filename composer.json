@@ -80,13 +80,11 @@
         "post-install-cmd": [
             "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "patch -N -d web/modules/contrib/pnx_media/config/install/ -i ../../../../../../patches/pnx_media/2937899-2.patch; exit 0",
-            "cp -Tav src web"
+            "patch -N -d web/modules/contrib/pnx_media/config/install/ -i ../../../../../../patches/pnx_media/2937899-2.patch; exit 0"
         ],
         "post-update-cmd": [
             "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-            "cp -Tav src web"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ]
     },
     "extra": {
