@@ -5,7 +5,8 @@ Site: Conservation Commission
 body.path-frontpage .hero_header_section {
     color: #ffffff;
     padding: 20px 0;
-    background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .7)), #617A6D url(/sites/default/files/2018-06/homepage-banner-main.jpg) no-repeat top center;
+   /* background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .7)), #00a78e url(/sites/default/files/2018-06/homepage-banner-main.jpg) no-repeat top center;*/
+    background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .5)), #00a78e url(../img/Splash-Banner-lg.jpg) no-repeat top center;
     text-shadow: 1px 1px 1px rgba(0,0,0, .8);
 /*
     background-attachment: fixed;
@@ -19,7 +20,8 @@ body.path-frontpage .hero_header_section {
 .hero_header_section {
     color: #ffffff;
     padding: 20px 0;
-    background: #617A6D url(../img/main_bg.jpg) no-repeat top center;
+    background: linear-gradient( rgba(0,0,0, .1), rgba(0,0,0, .3)), #00a78e url(../img/Splash-Banner-lg.jpg) no-repeat top center;
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
 }
 
 [class^='breadcrumbs'] {

@@ -856,15 +856,10 @@ header .header_search .form-submit button:before {
     outline: none;
 }
 
-header .header_mobile .menu_closer {
-    display: inline-block;
-    vertical-align: top;
-}
-header .header_mobile .menu_closer a {
+header .header_mobile .nav-toggle, header .header_mobile .search_icon {
     display: inline-block;
     width: 24px;
     height: 24px;
-    padding: 13px 13px;
     border: 0px;
     color: #fff;
     background: #2D2F32;
@@ -874,27 +869,18 @@ header .header_mobile .menu_closer a {
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
 }
-header .header_mobile .menu_closer a:after {
+header .header_mobile a.nav-toggle:before {
     font-family: "Font Awesome 5 Free";
     content: "\f0C9";
     font-weight: 900;
     font-size: 1.375rem;
-    font-weight: normal;
     line-height: 1.375rem;
-}
-header .header_mobile .nav_icon, header .header_mobile .search_icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-   /* padding: 13px 13px; */
-    border: 0px;
     color: #fff;
     background: #2D2F32;
-    font-size: 0px;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+    vertical-align: middle;
+    text-align: left;
+    float:left;
+    position: initial;
 }
 
 header .header_mobile .search_icon:before {
@@ -906,10 +892,6 @@ header .header_mobile .search_icon:before {
     color: #fff;
     background: #2D2F32;
     vertical-align: middle;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
     text-align: right;
     float: right;
 }
