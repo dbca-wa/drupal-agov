@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e54561bac96ed5716807783b60b1c8d",
+    "content-hash": "604d4ab208ee6b39a074a7957564ab36",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -642,6 +642,31 @@
             ],
             "description": "Provides a way to patch Composer packages.",
             "time": "2017-12-07T16:16:31+00:00"
+        },
+        {
+            "name": "dbca-wa/webserver_auth",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dbca-wa/drupal_dbca_auth.git",
+                "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/3fbbce712b361510d6b9dcbc7464da3667d826b6",
+                "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "DBCA SSO adapter for Drupal 8",
+            "support": {
+                "source": "https://github.com/dbca-wa/drupal_dbca_auth/tree/master",
+                "issues": "https://github.com/dbca-wa/drupal_dbca_auth/issues"
+            },
+            "time": "2018-09-13T09:57:12+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

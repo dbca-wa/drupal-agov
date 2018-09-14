@@ -897,6 +897,33 @@
         "description": "Provides a way to patch Composer packages."
     },
     {
+        "name": "dbca-wa/webserver_auth",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dbca-wa/drupal_dbca_auth.git",
+            "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/3fbbce712b361510d6b9dcbc7464da3667d826b6",
+            "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6",
+            "shasum": ""
+        },
+        "time": "2018-09-13T09:57:12+00:00",
+        "type": "drupal-module",
+        "installation-source": "source",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "description": "DBCA SSO adapter for Drupal 8",
+        "support": {
+            "source": "https://github.com/dbca-wa/drupal_dbca_auth/tree/master",
+            "issues": "https://github.com/dbca-wa/drupal_dbca_auth/issues"
+        }
+    },
+    {
         "name": "dflydev/dot-access-data",
         "version": "v1.1.0",
         "version_normalized": "1.1.0.0",

@@ -13,6 +13,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dbca-wa/drupal_dbca_auth"
         }
     ],
     "require": {
@@ -50,7 +54,8 @@
         "hirak/prestissimo": "^0.3.7",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "dbca-wa/webserver_auth": "*"
     },
     "require-dev": {
         "webflo/drupal-core-require-dev": "~8.5.1"
