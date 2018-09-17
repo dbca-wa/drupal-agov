@@ -58,6 +58,24 @@ class LinkAttributesTest extends BrowserTestBase {
     $this->assertEquals('menu__link--really_special', $link->getAttribute('class'));
     // No rel attribute was added, so none should be present.
     $this->assertFalse($link->hasAttribute('rel'));
+
+    // Add another link to assert that the target can be empty.
+    $this->drupalGet('admin/structure/menu/manage/footer/add');
+    $this->submitForm([
+      'title[0][value]' => 'No target menu link',
+      'link[0][uri]' => '<front>',
+      'link[0][options][attributes][target]' => '',
+      'link[0][options][attributes][rel]' => 'author',
+    ], t('Save'));
+    $this->drupalGet('user');
+    $page = $this->getSession()->getPage();
+    // The link should exist and contain the set rel attribute.
+    $link = $page->findLink('No target menu link');
+    $this->assertNotNull($link);
+    $this->assertEquals('author', $link->getAttribute('rel'));
+    // No class or target was specified, these shouldn't be rendered.
+    $this->assertFalse($link->hasAttribute('target'));
+    $this->assertFalse($link->hasAttribute('class'));
   }
 
 }

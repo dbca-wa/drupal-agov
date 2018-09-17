@@ -41,7 +41,7 @@
         "drupal/page_manager": "^4.0@beta",
         "drupal/panels": "^4.3",
         "drupal/password_policy": "^3.0@alpha",
-        "drupal/pathauto": "^1.1",
+        "drupal/pathauto": "1.2",
         "drupal/pnx_media_embed": "^1.0@alpha",
         "drupal/recaptcha": "^2.3",
         "drupal/scheduled_updates": "^1.0@alpha",

@@ -13,8 +13,8 @@ namespace Symfony\Component\BrowserKit;
 
 use Symfony\Component\BrowserKit\Exception\BadMethodCallException;
 use Symfony\Component\DomCrawler\Crawler;
-use Symfony\Component\DomCrawler\Link;
 use Symfony\Component\DomCrawler\Form;
+use Symfony\Component\DomCrawler\Link;
 use Symfony\Component\Process\PhpProcess;
 
 /**
@@ -284,14 +284,16 @@ abstract class Client
     /**
      * Submits a form.
      *
-     * @param Form  $form   A Form instance
-     * @param array $values An array of form field values
+     * @param Form  $form             A Form instance
+     * @param array $values           An array of form field values
+     * @param array $serverParameters An array of server parameters
      *
      * @return Crawler
      */
-    public function submit(Form $form, array $values = array(), $serverParameters = array())
+    public function submit(Form $form, array $values = array()/*, array $serverParameters = array()*/)
     {
         $form->setValues($values);
+        $serverParameters = 2 < \func_num_args() ? func_get_arg(2) : array();
 
         return $this->request($form->getMethod(), $form->getUri(), $form->getPhpValues(), $form->getPhpFiles(), $serverParameters);
     }
@@ -392,7 +394,7 @@ abstract class Client
             unlink($deprecationsFile);
             foreach ($deprecations ? unserialize($deprecations) : array() as $deprecation) {
                 if ($deprecation[0]) {
-                    trigger_error($deprecation[1], E_USER_DEPRECATED);
+                    @trigger_error($deprecation[1], E_USER_DEPRECATED);
                 } else {
                     @trigger_error($deprecation[1], E_USER_DEPRECATED);
                 }
@@ -534,7 +536,7 @@ abstract class Client
 
         $request = $this->internalRequest;
 
-        if (in_array($this->internalResponse->getStatus(), array(301, 302, 303))) {
+        if (\in_array($this->internalResponse->getStatus(), array(301, 302, 303))) {
             $method = 'GET';
             $files = array();
             $content = null;
