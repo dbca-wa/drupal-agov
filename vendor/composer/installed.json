@@ -1021,15 +1021,15 @@
         "source": {
             "type": "git",
             "url": "https://github.com/dbca-wa/drupal_dbca_auth.git",
-            "reference": "17bd122be36fa8d1757a278a725b22cdba57816e"
+            "reference": "0df484cc3b1c4a17abccf25702478f724816c7d6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/17bd122be36fa8d1757a278a725b22cdba57816e",
-            "reference": "17bd122be36fa8d1757a278a725b22cdba57816e",
+            "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/0df484cc3b1c4a17abccf25702478f724816c7d6",
+            "reference": "0df484cc3b1c4a17abccf25702478f724816c7d6",
             "shasum": ""
         },
-        "time": "2018-09-18T04:36:25+00:00",
+        "time": "2018-09-18T08:09:33+00:00",
         "type": "drupal-module",
         "installation-source": "source",
         "license": [

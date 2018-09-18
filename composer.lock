@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/dbca-wa/drupal_dbca_auth.git",
-                "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6"
+                "reference": "0df484cc3b1c4a17abccf25702478f724816c7d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/3fbbce712b361510d6b9dcbc7464da3667d826b6",
-                "reference": "3fbbce712b361510d6b9dcbc7464da3667d826b6",
+                "url": "https://api.github.com/repos/dbca-wa/drupal_dbca_auth/zipball/0df484cc3b1c4a17abccf25702478f724816c7d6",
+                "reference": "0df484cc3b1c4a17abccf25702478f724816c7d6",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -779,7 +779,7 @@
                 "source": "https://github.com/dbca-wa/drupal_dbca_auth/tree/master",
                 "issues": "https://github.com/dbca-wa/drupal_dbca_auth/issues"
             },
-            "time": "2018-09-13T09:57:12+00:00"
+            "time": "2018-09-18T08:09:33+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
