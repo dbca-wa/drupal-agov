@@ -2975,6 +2975,163 @@
         }
     },
     {
+        "name": "drupal/fontawesome",
+        "version": "2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/fontawesome",
+            "reference": "8.x-2.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/fontawesome-8.x-2.5.zip",
+            "reference": "8.x-2.5",
+            "shasum": "568553823044337db910e4d18dd5f2c267f73a79"
+        },
+        "require": {
+            "drupal/core": "~8.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.5",
+                "datestamp": "1535395080",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "drush": {
+                "services": {
+                    "drush.services.yml": "^9"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Daniel.Moberly",
+                "homepage": "https://www.drupal.org/user/1160788"
+            },
+            {
+                "name": "RobLoach",
+                "homepage": "https://www.drupal.org/user/61114"
+            },
+            {
+                "name": "cosmicdreams",
+                "homepage": "https://www.drupal.org/user/42579"
+            },
+            {
+                "name": "geerlingguy",
+                "homepage": "https://www.drupal.org/user/389011"
+            },
+            {
+                "name": "inders",
+                "homepage": "https://www.drupal.org/user/127640"
+            },
+            {
+                "name": "truls1502",
+                "homepage": "https://www.drupal.org/user/325866"
+            }
+        ],
+        "description": "The web's most popular icon set and toolkit.",
+        "homepage": "https://www.drupal.org/project/fontawesome",
+        "support": {
+            "source": "http://cgit.drupalcode.org/fontawesome"
+        }
+    },
+    {
+        "name": "drupal/geofield",
+        "version": "1.0.0-beta4",
+        "version_normalized": "1.0.0.0-beta4",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/geofield",
+            "reference": "8.x-1.0-beta4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.0-beta4.zip",
+            "reference": "8.x-1.0-beta4",
+            "shasum": "afc3006a891a83b79f44f8f62cac6322c83726e1"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "phayes/geophp": "^1.2"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-beta4",
+                "datestamp": "1520365980",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Beta releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Brandon Morrison",
+                "homepage": "https://www.drupal.org/u/brandonian",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Pablo López",
+                "homepage": "https://www.drupal.org/u/plopesc",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Italo Mairo",
+                "homepage": "https://www.drupal.org/u/itamair",
+                "role": "Maintainer"
+            },
+            {
+                "name": "davidseth",
+                "homepage": "https://www.drupal.org/user/254857"
+            },
+            {
+                "name": "itamair",
+                "homepage": "https://www.drupal.org/user/1179076"
+            },
+            {
+                "name": "phayes",
+                "homepage": "https://www.drupal.org/user/47098"
+            },
+            {
+                "name": "plopesc",
+                "homepage": "https://www.drupal.org/user/282415"
+            },
+            {
+                "name": "zzolo",
+                "homepage": "https://www.drupal.org/user/147331"
+            }
+        ],
+        "description": "Stores geographic and location data (points, lines, and polygons).",
+        "homepage": "https://www.drupal.org/project/geofield",
+        "support": {
+            "source": "http://git.drupal.org/project/geofield.git",
+            "issues": "https://www.drupal.org/project/issues/geofield",
+            "irc": "irc://irc.freenode.org/drupal-contribute"
+        }
+    },
+    {
         "name": "drupal/geolocation",
         "version": "1.11.0",
         "version_normalized": "1.11.0.0",
@@ -3025,6 +3182,53 @@
         "homepage": "https://www.drupal.org/project/geolocation",
         "support": {
             "source": "http://cgit.drupalcode.org/geolocation"
+        }
+    },
+    {
+        "name": "drupal/hammerjs",
+        "version": "dev-1.x",
+        "version_normalized": "dev-1.x",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/hammerjs",
+            "reference": "73230060a5f96c5688d199af53a6150ab97faa0f"
+        },
+        "require": {
+            "drupal/core": "~8.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.x-dev",
+                "datestamp": "1481346784",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Project has not opted into security advisory coverage!"
+                }
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "bfr",
+                "homepage": "https://www.drupal.org/user/369262"
+            },
+            {
+                "name": "rli",
+                "homepage": "https://www.drupal.org/user/633216"
+            }
+        ],
+        "description": "Add <a href=\"http://hammerjs.github.io\">Hammer.js</a> library definition.",
+        "homepage": "https://www.drupal.org/project/hammerjs",
+        "support": {
+            "source": "http://cgit.drupalcode.org/hammerjs"
         }
     },
     {
@@ -3093,6 +3297,83 @@
         "homepage": "https://www.drupal.org/project/inline_entity_form",
         "support": {
             "source": "http://cgit.drupalcode.org/inline_entity_form"
+        }
+    },
+    {
+        "name": "drupal/leaflet",
+        "version": "1.0.0-beta12",
+        "version_normalized": "1.0.0.0-beta12",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/leaflet",
+            "reference": "8.x-1.0-beta12"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/leaflet-8.x-1.0-beta12.zip",
+            "reference": "8.x-1.0-beta12",
+            "shasum": "0064904583aca00c11fe7463b4bf0b012b772da5"
+        },
+        "require": {
+            "drupal/core": "*",
+            "drupal/geofield": "^1.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.0-beta12",
+                "datestamp": "1532550781",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Beta releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Italo Mairo",
+                "homepage": "https://www.drupal.org/u/itamair",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Peter Vanhee (pvhee)",
+                "homepage": "https://www.drupal.org/u/pvhee",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Rik de Boer (RdeBoer)",
+                "homepage": "https://www.drupal.org/u/rdeboer",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Gabriel Carleton-Barnes (gcb)",
+                "homepage": "https://www.drupal.org/u/gcb",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Lev Tsypin (levelos)",
+                "homepage": "https://www.drupal.org/u/levelos",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Sean Larkin (seanberto)",
+                "homepage": "https://www.drupal.org/u/seanberto",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Integration with the Leaflet map scripting library.",
+        "homepage": "https://www.drupal.org/project/leaflet",
+        "support": {
+            "source": "http://cgit.drupalcode.org/leaflet",
+            "issues": "https://www.drupal.org/project/issues/leaflet"
         }
     },
     {
@@ -3634,6 +3915,54 @@
         }
     },
     {
+        "name": "drupal/mmenu",
+        "version": "dev-1.x",
+        "version_normalized": "dev-1.x",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/mmenu",
+            "reference": "8ed018ca9865b2305b862ce16eeea79648e31bd6"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "drupal/libraries": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.x-dev",
+                "datestamp": "1462299839",
+                "security-coverage": {
+                    "status": "not-covered",
+                    "message": "Dev releases are not covered by Drupal security advisories."
+                }
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Jay.Chen",
+                "homepage": "https://www.drupal.org/user/180060"
+            },
+            {
+                "name": "jgao",
+                "homepage": "https://www.drupal.org/user/378870"
+            }
+        ],
+        "description": "For creating slick, app look-alike sliding menus for you mobile website with only one line of javascript.",
+        "homepage": "https://www.drupal.org/project/mmenu",
+        "support": {
+            "source": "http://cgit.drupalcode.org/mmenu"
+        }
+    },
+    {
         "name": "drupal/page_manager",
         "version": "4.0.0-beta3",
         "version_normalized": "4.0.0.0-beta3",
@@ -4097,6 +4426,57 @@
         }
     },
     {
+        "name": "drupal/responsive_menu",
+        "version": "2.6.0",
+        "version_normalized": "2.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/responsive_menu",
+            "reference": "8.x-2.6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/responsive_menu-8.x-2.6.zip",
+            "reference": "8.x-2.6",
+            "shasum": "8dc4f4251ada211fad52aa9d0c02d50c4752d457"
+        },
+        "require": {
+            "drupal/core": "^8.4"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-2.x": "2.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-2.6",
+                "datestamp": "1515872884",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Tancredi D'Onofrio (tanc)",
+                "homepage": "https://www.drupal.org/u/tanc",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Provides a javascript based off-canvas responsive menu with depth. At wider browser widths it provides a horizontal menu capable of drop downs and flyouts",
+        "homepage": "https://drupal.org/project/responsive_menu",
+        "support": {
+            "source": "https://cgit.drupalcode.org/responsive_menu",
+            "issues": "https://drupal.org/project/issues/responsive_menu"
+        }
+    },
+    {
         "name": "drupal/scheduled_updates",
         "version": "1.0.0-alpha7",
         "version_normalized": "1.0.0.0-alpha7",
@@ -4207,6 +4587,58 @@
             "source": "https://cgit.drupalcode.org/simple_sitemap",
             "issues": "https://drupal.org/project/issues/simple_sitemap",
             "irc": "irc://irc.freenode.org/drupal-contribute"
+        }
+    },
+    {
+        "name": "drupal/superfish",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/superfish",
+            "reference": "8.x-1.2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/superfish-8.x-1.2.zip",
+            "reference": "8.x-1.2",
+            "shasum": "e6f11be2bb2b95957d144bb0155c29c7aad40a62"
+        },
+        "require": {
+            "drupal/core": "~8.0",
+            "mehrpadin/superfish": "~2.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-1.x": "1.x-dev"
+            },
+            "drupal": {
+                "version": "8.x-1.2",
+                "datestamp": "1517739480",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "mehrpadin",
+                "homepage": "https://www.drupal.org/u/mehrpadin",
+                "role": "Maintainer"
+            }
+        ],
+        "description": "Adds jQuery Superfish plugin to menu blocks.",
+        "homepage": "https://www.drupal.org/project/superfish",
+        "support": {
+            "source": "https://cgit.drupalcode.org/superfish",
+            "issues": "https://www.drupal.org/project/superfish"
         }
     },
     {
@@ -5580,6 +6012,35 @@
         ]
     },
     {
+        "name": "mehrpadin/superfish",
+        "version": "2.1",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mehrpadin/Superfish-for-Drupal.git",
+            "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mehrpadin/Superfish-for-Drupal/zipball/80a0a484b727e9fbe6b0ee609f80e10e5e158683",
+            "reference": "80a0a484b727e9fbe6b0ee609f80e10e5e158683",
+            "shasum": ""
+        },
+        "time": "2017-05-30T13:00:18+00:00",
+        "type": "drupal-library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Superfish library for the Drupal Superfish module.",
+        "homepage": "https://github.com/mehrpadin/Superfish-for-Drupal",
+        "keywords": [
+            "jquery",
+            "plugin"
+        ]
+    },
+    {
         "name": "mikey179/vfsStream",
         "version": "v1.6.5",
         "version_normalized": "1.6.5.0",
@@ -5886,6 +6347,44 @@
             }
         ],
         "description": "Library for handling version information and constraints"
+    },
+    {
+        "name": "phayes/geophp",
+        "version": "1.2",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phayes/geoPHP.git",
+            "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phayes/geoPHP/zipball/015404e85b602e0df1f91441f8db0f9e98f7e567",
+            "reference": "015404e85b602e0df1f91441f8db0f9e98f7e567",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2014-12-02T06:11:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "geoPHP.inc"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2 or New-BSD"
+        ],
+        "authors": [
+            {
+                "name": "Patrick Hayes"
+            }
+        ],
+        "description": "GeoPHP is a open-source native PHP library for doing geometry operations. It is written entirely in PHP and can therefore run on shared hosts. It can read and write a wide variety of formats: WKT (including EWKT), WKB (including EWKB), GeoJSON, KML, GPX, GeoRSS). It works with all Simple-Feature geometries (Point, LineString, Polygon, GeometryCollection etc.) and can be used to get centroids, bounding-boxes, area, and a wide variety of other useful information.",
+        "homepage": "https://github.com/phayes/geoPHP"
     },
     {
         "name": "phpdocumentor/reflection-common",
