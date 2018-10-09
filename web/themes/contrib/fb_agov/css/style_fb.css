@@ -1,0 +1,63 @@
+/* 
+Specific style overrides 
+Site: Flatback Turtles
+*/
+body.path-frontpage .hero_header_section {
+    color: #ffffff;
+    padding: 20px 0;
+    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #40528a url(../img/flatback-turle-1.jpg) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+
+   /* background-attachment: fixed;*/
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.hero_header_section {
+    color: #ffffff;
+    padding: 20px 0;
+    background: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .4)), #40528a url(../img/flatback-turle-banner-1.jpg);
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+    background-position: center bottom !IMPORTANT;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.block-system-branding-block {
+    text-align:left;
+}
+.block-system-branding-block img {
+    width: auto;
+    max-height: inherit;
+}
+
+
+
+[class^='breadcrumbs'] {
+    color: #ffffff;
+    background-color: transparent;
+}
+[class^='breadcrumbs'] a {
+    color: #ffffff;
+    border-bottom: dashed 1px #ffffff;
+}
+[class^='breadcrumbs'] a:hover {
+    color: #ffffff;
+    border-bottom: solid 1px #ffffff;
+}
+
+
+@media (min-width: 768px) {
+body.path-frontpage .hero_header_section {
+    min-height: 500px;
+    padding: 50px 0;
+}
+.hero_header_section {
+    padding-top:0;
+}
+
+}
