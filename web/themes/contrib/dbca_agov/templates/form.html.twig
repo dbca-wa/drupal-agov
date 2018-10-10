@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{% if element['#form_id'] == 'search_block_form' %}
+<div class="header_search hidden-xs">
+  <form{{ attributes }} action="{{element['#action']}}" method="get" accept-charset="UTF-8" data-drupal-form-fields="edit-keys">
+    <div class="form-item">
+      <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Search this website...">
+      </input>
+    </div>
+    <div class="form-submit">
+      <button type="submit">Submit</button>    
+    </div>
+  </form>
+<div class="searchkeyword__whole-gov-link">
+<a href="http://wa.gov.au/search" title="Go to WA Government search (external link)">Go to WA Government search</a>
+</div>
+</div>
+{% else %}
+  <form{{ attributes }}>
+    {{ children }}
+  </form>
+{% endif %}

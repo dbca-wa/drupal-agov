@@ -1,0 +1,66 @@
+/* 
+Specific style overrides 
+Site: DBCA 
+*/
+body.path-frontpage .hero_header_section {
+    color: #ffffff;
+    padding: 20px 0;
+    overflow:hidden;
+    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #2D2F32 url(../img/homepage-banner-kingspark.jpg);
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.hero_header_section {
+    color: #ffffff;
+    padding: 20px 0 0 0;
+    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #2D2F32 url(../img/inside-banner-kingspark.jpg) no-repeat top center;
+    text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+}
+
+
+[class^='breadcrumbs'] {
+    color: #ffffff;
+    background-color: transparent;
+}
+[class^='breadcrumbs'] a {
+    color: #ffffff;
+    border-bottom: dashed 1px #ffffff;
+}
+[class^='breadcrumbs'] a:hover {
+    color: #ffffff;
+    border-bottom: solid 1px #ffffff;
+}
+
+.bar1 {
+    background: #266093;
+}
+.bar2 {
+    background: #00a8b4;
+}
+
+.bar3 {
+    background: #fdc82f;
+}
+.bar4 {
+    background: #1c5553;
+}
+.bar {
+    height: 5px;
+}
+
+
+@media (min-width: 768px) {
+body.path-frontpage .hero_header_section {
+    min-height:calc(36vh + 50px);
+    padding: 50px 0;
+}
+.hero_header_section {
+    padding-top:0;
+}
+
+}
