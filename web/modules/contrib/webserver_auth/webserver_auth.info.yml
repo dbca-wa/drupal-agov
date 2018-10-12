@@ -1,0 +1,5 @@
+name: 'DBCA SSO authentication'
+description: 'Accept authentication via header-based SSO auth.'
+type: 'module'
+core: '8.x'
+package: 'Web services'
