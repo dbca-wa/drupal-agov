@@ -2,25 +2,21 @@ fonts:
   version: 1.x
   css:
     theme:
-      'https://fonts.googleapis.com/css?family=Heebo:300,500,700,900': { type: external }
+       '//fonts.googleapis.com/css?family=Heebo:300,500,700,900': { type: external, minified: true }
 
 
 
 
 base:
-  version: 1.x
+  version: 1.1.x
   css:
     theme:
       css/styles.css: {}
       css/style_fb.css: {}
       css/bootstrap-grid.min.css: {}
-      css/colorbox_style.css: {}
   js:
     js/scripts.js: {}
-    js/main.6194e53e.js: {}
-    ../../../libraries/colorbox/jquery.colorbox-min.js: {}
-    js/colorbox_style.js: {}
-#    'https://use.fontawesome.com/releases/v5.0.12/js/all.js': { type: external }
+#    'https://use.fontawesome.com/releases/v5.2.0/js/all.js': { type: external }
 
 
 
@@ -40,7 +36,7 @@ base:
 #    component:
 #      css/components/flexslider-global.css: {}
 #  dependencies:
-#    - fb_agov/flexslider
+#    - cc_agov/flexslider
 
 #flexslider-in-page-init:
 #  version: VERSION
@@ -50,7 +46,7 @@ base:
 #  js:
 #    js/init/flexslider-in-page-init.js: { scope: 'footer' }
 #  dependencies:
-#    - fb_agov/flexslider-global
+#    - cc_agov/flexslider-global
 #    - core/drupalSettings
 #    - core/drupal
 #    - core/jquery.once

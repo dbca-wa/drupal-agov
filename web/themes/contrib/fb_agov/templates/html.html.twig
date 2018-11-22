@@ -19,16 +19,15 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+   
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     <nav class="skip-to">
       <a href="#main-content" id="skip-link">{{ 'Skip to main content'|t }}</a>
     </nav>
-    {{ page_top }}
+     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
-  
- </body>
+  </body>
 </html>

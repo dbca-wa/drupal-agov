@@ -5,36 +5,23 @@ Site: Flatback Turtles
 body.path-frontpage .hero_header_section {
     color: #ffffff;
     padding: 20px 0;
-    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #40528a url(../img/flatback-turle-1.jpg) ;
+    overflow:hidden;
+    background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .5)), #2D2F32 url(../img/sea-turtle-main.jpg);
     text-shadow: 1px 1px 1px rgba(0,0,0, .8);
-
-   /* background-attachment: fixed;*/
-    background-position: top;
+   /*
     background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
-
+    background-attachment: fixed;
+   */
 
 }
 
 .hero_header_section {
     color: #ffffff;
-    padding: 20px 0;
-    background: linear-gradient( rgba(0,0,0, .2), rgba(0,0,0, .4)), #40528a url(../img/flatback-turle-banner-1.jpg);
+    background: linear-gradient( rgba(0,0,0, .3), rgba(0,0,0, .5)), #2D2F32 url(../img/sea-turtle-internal.jpg);
     text-shadow: 1px 1px 1px rgba(0,0,0, .8);
-    background-position: center bottom !IMPORTANT;
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
-
-.block-system-branding-block {
-    text-align:left;
-}
-.block-system-branding-block img {
-    width: auto;
-    max-height: inherit;
-}
-
 
 
 [class^='breadcrumbs'] {
@@ -50,14 +37,38 @@ body.path-frontpage .hero_header_section {
     border-bottom: solid 1px #ffffff;
 }
 
+.bar1 {
+    background: #266093;
+}
+.bar2 {
+    background: #00a8b4;
+}
+
+.bar3 {
+    background: #fdc82f;
+}
+.bar4 {
+    background: #1c5553;
+}
+.bar {
+    height: 5px;
+}
+
 
 @media (min-width: 768px) {
 body.path-frontpage .hero_header_section {
-    min-height: 500px;
+    min-height:calc(36vh + 50px);
     padding: 50px 0;
 }
 .hero_header_section {
     padding-top:0;
 }
+
+.block-system-branding-block img {
+    width: auto;
+    max-height: 95px;
+    max-width: 600px;
+}
+
 
 }

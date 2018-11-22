@@ -8,17 +8,18 @@ body.path-frontpage .hero_header_section {
     overflow:hidden;
     background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #2D2F32 url(../img/homepage-banner-kingspark.jpg);
     text-shadow: 1px 1px 1px rgba(0,0,0, .8);
+   /*
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+   */
 
 }
 
 .hero_header_section {
     color: #ffffff;
-    padding: 20px 0 0 0;
-    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #2D2F32 url(../img/inside-banner-kingspark.jpg) no-repeat top center;
+    background: linear-gradient( rgba(0,0,0, .4), rgba(0,0,0, .6)), #2D2F32 url(../img/inside-banner-dbca.jpg);
     text-shadow: 1px 1px 1px rgba(0,0,0, .8);
 }
 

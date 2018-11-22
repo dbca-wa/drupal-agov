@@ -8,6 +8,8 @@ landing_page:
       label: Header Left
     header_right:
       label: Header Right
+    above_content:
+      label: Above content
     promo_1:
       label: Promo region 1
     promo_2:
@@ -18,9 +20,14 @@ landing_page:
       label: Body Left
     body_right:
       label: Body Right
+    below_content:
+      label: Below content
     footer_1:
       label: Footer region 1
     footer_2:
       label: Footer region 2
     footer_3:
       label: Footer region 3
+    footer_4:
+      label: Footer region 4
+

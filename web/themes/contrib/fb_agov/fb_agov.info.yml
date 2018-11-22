@@ -13,6 +13,7 @@ libraries:
   - fb_agov/layouts
 
 
+
 regions:
   header_left: 'Header left'
   header_right: 'Header right'
@@ -23,7 +24,9 @@ regions:
   hero: 'Hero Block' 
   breadcrumb: Breadcrumb
   help: Help
+  above_content: 'Above content'
   content: Content
+  below_content: 'Below content'
   sidebar_second: 'Right sidebar (or additional left sidebar)'
   fat_footer: 'Fat Footer' 
   footer_top: 'Footer top'

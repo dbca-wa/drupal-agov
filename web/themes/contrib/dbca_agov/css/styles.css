@@ -56,10 +56,21 @@ h3 {
     font-size: 1.125rem;
     line-height: 2rem;
 }
- 
+
+.hero_header_section {
+    background-color: #F5F5F5;
+    background-repeat: no-repeat !IMPORTANT;
+    background-size: cover !IMPORTANT;
+    background-position: 50% 50% !IMPORTANT;
+    position: relative !IMPORTANT;
+    width: 100% !IMPORTANT;
+    height: auto !IMPORTANT;
+}
+
 .hero_header_section .lead {
     font-size: 1.2rem;
     line-height: 110%;
+    
 }
 
 .content-main h1, .content-main .hero .site-title, .hero .content-main .site-title, .content-main .hero-sml .site-title, .hero-sml .content-main .site-title, .content-main .hero-med .site-title, .hero-med .content-main .site-title, .content-main h2, .content-main .display, .content-main h3, .content-main h4, .content-main h5, .content-main p, .content-main li, .content-main dl {
@@ -132,6 +143,12 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 header[role='banner'] a {
     border:none;
 }
+a[rel~="external"]:after {
+    font-family: "Font Awesome 5 Free";
+    content: "\f35d";
+    font-weight: 900;
+    padding-left:5px;
+}
 [class^='breadcrumbs'] a {
     color: #313131;
     border-bottom: dashed 1px #313131;
@@ -158,6 +175,22 @@ footer[role='contentinfo'] a, footer .footer_links ul li a:hover, footer .footer
 header[role='banner'] a:hover, header[role='banner'] a:active, header[role='banner'] a:focus, [class^='breadcrumbs'] a:hover, [class^='breadcrumbs'] a:active, [class^='breadcrumbs'] a:focus, body>main a:hover, body>main a:active, body>main a:focus {
     background-color: transparent !IMPORTANT;
 }
+
+h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
+    font-weight: 700;
+    line-height: 132%;
+    color: rgba(0,0,0,0.9);
+    letter-spacing: 0;
+    font-size: 2.75rem;
+    margin-bottom: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.hero_header_section .lead {
+    font-size: 1.625rem;
+    line-height: 150%;
+}
+
 
 .content-main h2, .content-main h2 a:link, .content-main h2 a:visited {
     font-weight: 700;
@@ -202,7 +235,7 @@ header[role='banner'] a:hover, header[role='banner'] a:active, header[role='bann
     background: #d14210;
     color: #ffffff;
 }
-.more-link a:after {
+.more-link a:after  {
     font-family: "Font Awesome 5 Free";
     content: "\f105";
     font-weight: 900;
@@ -293,8 +326,8 @@ footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[
 
 /* Downloads */
 
-.field--name-body {
-    margin: 20px 0;
+article .field--name-body {
+   margin: 20px 0;
 }
 .category, published {
     margin: 5px 0;
@@ -347,7 +380,7 @@ footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[
 .hero_header_section {
     background-color: #F5F5F5;
     padding-top: 0px;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 }
 .hero_header_section h1, .hero_header_section *{
     color:#ffffff;
@@ -392,18 +425,14 @@ blockquote p {
 
 
 .media-block {
-    display: flex;
-    align-items: flex-start;
+    display:block;
     padding: 1rem;
     margin: 0 0 1rem 0;
     border-bottom: 1px solid #f1f1f1;
 }
 .media-block > img {
-    width: 150px;
+    display:block;
     margin: 0 2rem 0 0;
-}
-.media-block > div {
-    flex: 1;
 }
 .media-block h2 {
     font-weight: 500;
@@ -631,7 +660,8 @@ header .region-header .block-system-branding-block img {
 }
 
 .breadcrumbs {
-    padding: 36px 0px 0 0;
+    padding: 36px 0px;
+    /*margin-bottom: 36px;*/
 }
 
 [class^='breadcrumbs'] ul li:not(:last-child) {
@@ -1244,15 +1274,40 @@ main .sidebar {
 }
 
 @media screen and (min-width: 768px) {
-h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
-    font-size: 1.75rem;
-}
 
 .hero_header_section .lead {
     font-size: 1.625rem;
     line-height: 150%;
 }
+
+.media-block {
+    display: flex;
+    align-items: flex-start;
 }
+.media-block > div {
+    flex: 1;
+}
+.media-block > img {
+    width: 250px;
+}
+
+
+
+
+}
+
+@media print, (max-width: 975px) {
+
+h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
+    font-size: 2rem;
+}
+.hero_header_section .lead {
+    font-size: 1.125rem;
+}
+
+}
+
+
 
 
 @media screen and (min-width: 975px) {
@@ -1260,8 +1315,19 @@ header nav {
     display: inline-block;
 }
  .region-header nav{
-        display:block
+    display:block
     }
+
+body.path-frontpage .hero_header_section {
+    color: #ffffff;
+    padding: 20px 0 60px 0;
+}
+.hero_header_section {
+    padding-top: 0px;
+    padding-bottom: 60px;
+}
+
+
 
 
 .block-system-branding-block img {

@@ -16,7 +16,8 @@
 {% block content %}
   {% if site_logo %}
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" /> 
+      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" class="hidden-xs" /> 
+      <img src="/sites/default/files/logo-flatbacks-mobile.svg" alt="{{ 'Home'|t }}" class="visible-xs" /> 
     </a>
   {% endif %}
   {% if site_name %}

@@ -57,15 +57,16 @@
  * @see html.html.twig
  */
 #}
-
+<div id="page-wrapper">
+<div id="page">
 <header class="header" role="banner">
   <div class="header_desktop wrapper">
   {% if page.header_left or page.header_right %}
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             {{ page.header_left }}
           </div>
-	  <div class="col-md-6">
+	  <div class="col-md-7">
             {{ page.header_right }} 
           </div>
         </div>
@@ -74,7 +75,7 @@
  <div class="header_mobile">
 <div class="row">
           <div class="col-xs-2 nav">
-          <!-- a href="#" class="nav-toggle" aria-hidden="false">Toggle menu</a -->          
+          <a aria-hidden="false" id="toggle-icon" class="nav-toggle toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">Toggle menu</a>        
           </div>
           <div class="col-xs-8 logo">
           {{ page.header_left }}
@@ -93,7 +94,7 @@
   {% set sidebar_second_class = 'sidebar' %}
 {% endif %}
 
-<div class="hero_header_section" {% if node.field_hero_image.entity.uri.value != ''  %}style="background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)),#40528a url({{ file_url(node.field_hero_image.entity.uri.value) }});"{% endif %}>
+<div class="hero_header_section" {% if node.field_hero_image.entity.uri.value != ''  %}style="background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)),#40528a url({{ file_url(node.field_hero_image.entity.uri.value) }});"{% endif %}>
 
 
  {% if is_front  %}
@@ -104,17 +105,32 @@
  {{ page.hero }}
    <h1{{ title_attributes }}> {{ title }} </h1> 
     <p class="lead">
-    {{ node.field_standard_subtitle.value }}
+    {{ node.field_standard_subtitle.value }} 
     {{ subti }}
     </p>
 
 </div>
  {% endif %}
 
-
+<span class="banner-credits">{% if node.field_hero_image.entity.uri.value != ''  %}{{ node.field_hero_image.alt }} {% else %} Flatback Turtle - Image &copy; Doug Perrine Photography {% endif %}</span>
 </div>
 
-<main class="wrapper {{ main_class }}" role="main">
+<div class="row-fluid">
+    <div class="col-xs-12 bar bar1">&nbsp;</div>
+</div>
+
+
+<div class="row-fluid clearfix">
+<div class="col-xs-12 text-center">
+{% if page.above_content %}
+        {{ page.above_content }}
+    {% endif %}
+</div>
+</div>
+
+
+<main class="wrapper {{ main_class }}" role="main"> 
+
   <div class="{{ content_class }}">
     {{ page.highlighted }}
     <nav class="skip-to">
@@ -123,6 +139,7 @@
 
     {{ page.help }}
     {{ page.content }}
+
   </div>
 
   {% if page.sidebar_second %}
@@ -131,8 +148,16 @@
     </aside>
   {% endif %}
 
+  
 </main>
 
+<div class="row-fluid clearfix">
+    <div class="col-xs-12 text-center">
+ {% if page.below_content %}
+        {{ page.below_content }}
+  {% endif %}
+</div>
+</div>
 
 <footer role="contentinfo">
    {% if page.fat_footer %}
@@ -167,3 +192,5 @@
 </footer>
 <a class="scroll-to-top" href="#skip-link">Back to top</a>
 {{ page.bottom }}
+</div>
+</div>
