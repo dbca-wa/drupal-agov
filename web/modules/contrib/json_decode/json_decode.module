@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ * Contains json_decode.module.
+ */
+
+function json_decode_user_login($account) {  
+  $config = \Drupal::config('json_decode.adminsettings');  
+  drupal_set_message($config->get('json_decode_message'));  
+  drupal_set_url($config->get('json_decode_url'));
+} 

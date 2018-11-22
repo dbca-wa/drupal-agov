@@ -1,0 +1,6 @@
+json_decode.admin_settings_form:  
+  title: 'Welcome Json Decode configuration'  
+  route_name: json_decode.admin_settings_form  
+  description: 'Welcome Json Decode admin'  
+  parent: system.admin_config_system  
+  weight: 99 

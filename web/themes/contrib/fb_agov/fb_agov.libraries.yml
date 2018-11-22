@@ -1,0 +1,52 @@
+fonts:
+  version: 1.x
+  css:
+    theme:
+       '//fonts.googleapis.com/css?family=Heebo:300,500,700,900': { type: external, minified: true }
+
+
+
+
+base:
+  version: 1.1.x
+  css:
+    theme:
+      css/styles.css: {}
+      css/style_fb.css: {}
+      css/bootstrap-grid.min.css: {}
+  js:
+    js/scripts.js: {}
+#    'https://use.fontawesome.com/releases/v5.2.0/js/all.js': { type: external }
+
+
+
+#flexslider:
+#  version: 2.5.0
+#  css:
+#    base:
+#      js/flexslider/flexslider.css: { weight: 0 }
+#  js:
+#    js/flexslider/jquery.flexslider-min.js: {}
+#  dependencies:
+#    - core/jquery
+
+#flexslider-global:
+#  version: VERSION
+#  css:
+#    component:
+#      css/components/flexslider-global.css: {}
+#  dependencies:
+#    - cc_agov/flexslider
+
+#flexslider-in-page-init:
+#  version: VERSION
+#  css:
+#    component:
+#      css/components/flexslider-in-page.css: {}
+#  js:
+#    js/init/flexslider-in-page-init.js: { scope: 'footer' }
+#  dependencies:
+#    - cc_agov/flexslider-global
+#    - core/drupalSettings
+#    - core/drupal
+#    - core/jquery.once

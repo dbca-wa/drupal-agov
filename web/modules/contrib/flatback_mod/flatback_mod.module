@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function flatback_mod_theme() {
+  return array(
+   'flatback_mod_block' => array(
+            'variables' => array('title' => NULL, 'description' => NULL),
+            'template' => 'block--flatback-mod',
+        ),
+  );
+}

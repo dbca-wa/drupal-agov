@@ -1,0 +1,95 @@
+<?php
+
+function fb_agov_preprocess_page(&$variables) {
+
+      // Load the node entity from current route
+        if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+                // Load the label of the bundle
+                    $bundle_label = \Drupal::entityTypeManager()
+                          ->getStorage('node_type')
+                                ->load($node->bundle())
+                                      ->label();
+                                          // Set the page title
+         }
+       else {
+            $titles =    $variables['page']['#title'];
+             $t = explode("|",$titles );
+            $variables['title'] = $t[0];
+            $variables['subti'] = $t[1];
+        }
+}
+
+
+function fb_agov_preprocess_page_title(&$variables) {
+
+ if ($node = \Drupal::routeMatch()->getParameter('node')) {
+     }
+ else {
+      $titles =    $variables['page']['#title'];
+       $t = explode("|",$titles );
+       $variables['title'] = $t[0];
+       $variables['subti'] = $t[1];
+ }
+}
+
+
+function fb_agov_preprocess_breadcrumb(&$variables) {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $titles =    $variables['page']['#title'];
+      $titles = $node->getTitle();
+        if (!empty($titles)) {
+           $t = explode("|",$titles );
+           $variables['bread'] = $t[0];
+//           $variables['breadcrumb'][] = array( 'text' => $t[0]);
+        }
+    }
+   else {
+     $request = \Drupal::request();
+       $route_match = \Drupal::routeMatch();
+       $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+        if (!empty($page_title)) {
+       $t = explode("|",$page_title);
+        //this variable will avaliable in twig file. 
+        if($t[0] != "" && $t[1] != '') { 
+//        $variables['breadcrumb'][] = array( 'text' => $t[0]); 
+         $variables['bread'] = $t[0];
+        }
+        else {
+  //          $variables['breadcrumb'][] = array( 'text' => $page_title);
+             $variables['bread'] = $page_title;
+        }
+        }
+        
+    }
+}
+
+
+// Display header images
+
+function mytheme_preprocess_page(&$variables) {
+  if ( $variables['node'] ) {
+    $node = $variables['node'];
+    // Optionally limit by bundle type. How do you get a bundle in D8?
+    // if ( $bundle != 'blog' ) return;
+    // Get your image URI.
+    $header_image = $node->get('hero_image')->value;
+    // Just guessing here: not sure what to do but it may involve styles.
+    $header_uri = $header_image->getFileUri();
+    // Override the variable that normally stores the header image.
+    // Not sure what that would be. Look in page.html.twig
+    $variables['hero_image'] = $header_uri;
+  }
+} 
+
+/*
+// Custom image for Pages
+// Via https://drupal.stackexchange.com/questions/229009/print-custom-image-field-for-taxonomy-page-page-taxonomy-html-twig-template
+
+function mytheme_preprocess_page(&$variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $term = \Drupal::routeMatch()->getParameter('taxonomy_term');
+    $variables['term'] = $term;
+  }
+}
+*/

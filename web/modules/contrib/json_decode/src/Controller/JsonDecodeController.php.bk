@@ -1,0 +1,233 @@
+<?php
+
+use Drupal\Component\Serialization\Json;
+
+namespace Drupal\Json_decode\Controller;
+
+class JsonDecodeController {
+	public function biology() {
+		$uri = "https://sdis.dpaw.wa.gov.au/api/projects/?search=biology";
+		try {
+		$response = \Drupal::httpClient()->get($uri,array('headers' => array('Accept' => 'application/json')));
+		$data = (string) $response->getBody();
+			if(empty($data)) {
+				return FALSE;
+			}else {
+		
+				$decoded = json_decode($data);
+				$count=0;
+			//	$html_code = "<div class='row'>";
+				foreach($decoded as $key => $value) {
+					if($count <= 10){
+						$html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div> ";
+						if($value->tagline_plain == '')
+							$html_code .= "<div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  ;
+						else
+							$html_code .="<div class='col-sm-9'><h4>" . $value->tagline_plain . "</h4>" ;
+
+
+						if($value->start_date != '')      $html_code .= "Date:" . $value->start_date; 
+
+						if($value->end_date != '')	$html_code .= "-" .$value->end_date;
+
+						$aims  = explode('</p>',$value->comments);
+						str_replace('Aims',"Description of the project: ",$aims[1]);
+						$html_code .=  $aims[1] . "</p></div></div>" ;
+						$count++;
+					}
+				else
+					break;
+
+				}
+			
+//				$html_code = "test";
+			}
+				return array (
+					'#title' => "Flatback Biology",
+					'#markup' => $html_code 
+	 			);
+			
+
+		}
+		catch (RequestedException $e) {
+			return FALSE;
+		}
+	}
+
+
+	public function movements() {
+
+                $uri = "https://sdis.dpaw.wa.gov.au/api/projects/?search=movements";
+		   try {
+		     $response = \Drupal::httpClient()->get($uri,array('headers' => array('Accept' => 'application/json')));
+		          $data = (string) $response->getBody();
+		      if(empty($data)) {
+		                  return FALSE;
+		        }else {
+                               $decoded = json_decode($data);
+                                $count=0;
+                               $html_code = "<div><ul> ";
+                               foreach($decoded as $key => $value) {
+                            if($count <= 10){
+				    //    $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div><div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  . $value->area_list_ibra_imcra_region ." <br />  " . $value->area_list_dpaw_region . " </div></div>" ;
+
+                             $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div> ";
+                               if($value->tagline_plain == '')
+                                                            $html_code .= "<div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  ;
+                               else
+                                                             $html_code .="<div class='col-sm-9'><h4>" . $value->tagline_plain . "</h4>" ;
+		     
+		if($value->year != '')      $html_code .= "Year:" . $value->year;
+			     $aims  = explode('</p>',$value->comments);
+                                       $html_code .=  $aims[1] . "</p></div></div>" ;
+                                  $count++;
+                               }
+                              else
+                                       break;
+            }
+  //                        $html_code .= "</ul> </div>";
+                      }
+        return array (
+                                      '#title' => "Flatback movements",
+                                       '#markup' => $html_code 
+                        );
+             }
+                catch (RequestedException $e) {
+		                        return FALSE;
+                }
+	}
+
+
+
+	public function genetics() {
+                
+            $uri = "https://sdis.dpaw.wa.gov.au/api/projects/?search=genetics";
+            try {
+                     $response = \Drupal::httpClient()->get($uri,array('headers' => array('Accept' => 'application/json')));
+                     $data = (string) $response->getBody();
+                   if(empty($data)) {
+                                     return FALSE;
+                   }else {
+                                    $decoded = json_decode($data);
+                                    $count=0;
+//                                   $html_code = "<div><ul> ";
+                             foreach($decoded as $key => $value) {
+				     if($count <= 10){
+					     //					     $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div><div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  . $value->area_list_ibra_imcra_region ." <br />  " . $value->area_list_dpaw_region . " </div></div>" ;
+
+                       $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div> ";
+				 if($value->tagline_plain == '')
+		                               $html_code .= "<div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  ;
+		                 else
+		                               $html_code .="<div class='col-sm-9'><h4>" . $value->tagline_plain . "</h4>" ;
+
+		       $aims  = explode('</p>',$value->comments);
+		       if($value->year != '')
+			       $html_code .= "Year:" . $value->year;
+
+		       $html_code .=  $aims[1] . "</p></div></div>" ;
+		       $count++;
+                              }
+                             else
+                                 break;
+		             }
+//                       $html_code .= "</ul> </div>";
+                   }
+              return array (
+                                     '#title' => "Flatback genetics",
+                                     '#markup' => $html_code
+                         );
+                 }
+                catch (RequestedException $e) {
+                                           return FALSE;
+                  }
+          }
+
+
+       public function flagship() {
+              $uri = "https://sdis.dpaw.wa.gov.au/api/projects/?search=flagship";
+                    try {
+	                     $response = \Drupal::httpClient()->get($uri,array('headers' => array('Accept' => 'application/json')));
+        	              $data = (string) $response->getBody();
+		           if(empty($data)) {
+		                               return FALSE;
+		             }else {
+		                      $decoded = json_decode($data);
+		                     $count=0;
+//		                      $html_code = "<div><ul> ";
+		                foreach($decoded as $key => $value) {
+					if($count <= 10){
+//$html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div><div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  . $value->area_list_ibra_imcra_region ." <br />  " . $value->area_list_dpaw_region . " </div></div>" ;
+
+                              $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div> ";
+                                              if($value->tagline_plain == '')
+                                                          $html_code .= "<div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  ;
+                                              else
+                                                         $html_code .="<div class='col-sm-9'><h4>" . $value->tagline_plain . "</h4>" ;
+		      
+			      if($value->year != '')      $html_code .= "Year:" . $value->year;
+
+			      $aims  = explode('</p>',$value->comments);
+			      $html_code .=  $aims[1] . "</p></div></div>" ;
+	      
+			      $count++;
+		     
+				}
+		            else
+		                 break;
+		       }
+//		                 $html_code .= "</ul> </div>";
+		             }
+		  return array (
+		                        '#title' => "Flatback flagship",
+		                       '#markup' => $html_code
+		                );
+		  }
+	             catch (RequestedException $e) {
+		                                      return FALSE;
+		               }
+	  }
+
+
+	public function threats() {
+		                
+
+              $uri = "https://sdis.dpaw.wa.gov.au/api/projects/?keywords=flatback_threats";
+	            try {
+		           $response = \Drupal::httpClient()->get($uri,array('headers' => array('Accept' => 'application/json')));
+		            $data = (string) $response->getBody();
+	            if(empty($data)) {
+                                     return FALSE;
+	                              }else {
+                                   $decoded = json_decode($data);
+                                   $count=0;
+// $html_code = "<div><ul> ";
+                                 foreach($decoded as $key => $value) {
+	                                if($count <= 10){
+//$html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div><div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  . $value->area_list_ibra_imcra_region ." <br />  " . $value->area_list_dpaw_region . " </div></div>" ;
+						
+                             $html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='https://sdis.dpaw.wa.gov.au/media/" .  $value->image ."'/></div> ";
+                                          if($value->tagline_plain == '')
+                                                              $html_code .= "<div class='col-sm-9'><h4> ". $value->title_plain . "</h4>"  ;
+                                            else
+						    $html_code .="<div class='col-sm-9'><h4>" . $value->tagline_plain . "</h4>" ;
+if($value->year != '')      $html_code .= "Year:" . $value->year;
+			     $aims  = explode('</p>',$value->comments);
+			     $html_code .=  $aims[1] . "</p></div></div>" ;
+			$count++;
+                                        }
+					else
+					     break;
+				 }
+// $html_code .= "</ul> </div>";
+                         }
+	             return array (                         '#title' => "Flatback threats",
+						     '#markup' => $html_code
+		     );
+		 }
+	          catch (RequestedException $e) {
+			  return FALSE;
+		  }
+              }
+
+}
