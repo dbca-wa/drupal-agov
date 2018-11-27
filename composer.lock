@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d235225bbd5d76b113d0980c29e78d75",
+    "content-hash": "e22366d64d35fbf76781e7fb56be3ad2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4131,7 +4131,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/mmenu",
-                "reference": "8ed018ca9865b2305b862ce16eeea79648e31bd6"
+                "reference": "a3c39ba347dd1156c362c1536cdd6f7f46dc05fa"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -4144,7 +4144,7 @@
                 },
                 "drupal": {
                     "version": "8.x-1.x-dev",
-                    "datestamp": "1462299839",
+                    "datestamp": "1538419980",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -4169,7 +4169,8 @@
             "homepage": "https://www.drupal.org/project/mmenu",
             "support": {
                 "source": "http://cgit.drupalcode.org/mmenu"
-            }
+            },
+            "time": "2018-10-06T10:55:13+00:00"
         },
         {
             "name": "drupal/ng_lightbox",
