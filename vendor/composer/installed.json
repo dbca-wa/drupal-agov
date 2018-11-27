@@ -4576,7 +4576,7 @@
         "source": {
             "type": "git",
             "url": "https://git.drupal.org/project/mmenu",
-            "reference": "8ed018ca9865b2305b862ce16eeea79648e31bd6"
+            "reference": "a3c39ba347dd1156c362c1536cdd6f7f46dc05fa"
         },
         "require": {
             "drupal/core": "~8.0",
@@ -4589,7 +4589,7 @@
             },
             "drupal": {
                 "version": "8.x-1.x-dev",
-                "datestamp": "1462299839",
+                "datestamp": "1538419980",
                 "security-coverage": {
                     "status": "not-covered",
                     "message": "Dev releases are not covered by Drupal security advisories."

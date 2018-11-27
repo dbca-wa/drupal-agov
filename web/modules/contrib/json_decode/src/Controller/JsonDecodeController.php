@@ -26,7 +26,7 @@ class JsonDecodeController {
 				$count=0;
 				foreach($decoded as $key => $value) {
 //					if($count <= 10){
-						if($value->image == '') {$value->image = 'https://flatbacks.dbca.wa.gov.au/sites/default/files/2018-10/flatback-default-800x600.jpg';
+						if($value->image == '') {$value->image = 'https://flatbacks-dev.dbca.wa.gov.au/sites/default/files/2018-10/flatback-default-800x600.jpg';
 
 						$html_code .= "<div class='row'><div class='col-sm-3'><img class='img-responsive' src='" .  $value->image ."'/></div> ";
 						}
