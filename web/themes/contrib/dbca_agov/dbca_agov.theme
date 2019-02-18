@@ -1,6 +1,98 @@
 <?php
 
+/* Start Advanced DBCA Theme settings - IN DEVELOPMENT 
+- Ryan Scott 
+- 02/01/2019
+- The idea is to make the theme editable via the settings, such as changing the theme background, color etc...
+- Currently no variables are displayed in our twig files, we're just setting up
+- For more on settings, visit: https://www.drupal.org/docs/8/theming-drupal-8/creating-advanced-theme-settings
+*/
+function dbca_agov_form_system_theme_settings_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state) {
+
+ $form['adv_header'] = array(
+    '#type' => 'details',
+    '#title' => t('Advanced header settings (IN DEVELOPMENT - not yet applied to the theme)'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#open' => FALSE, // Controls the HTML5 'open' attribute. Defaults to FALSE.
+  );
+
+  $form['adv_header']['homepage_image'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Homepage header image'),
+    '#default_value' => theme_get_setting('homepage_image', 'dbca_agov'),
+    '#description'   => t("Enter a URL of the homepage header image i.e: (/sites/default/files/your-background.jpg). To remove the background image, blank this field and save the settings."),
+  );
+
+ $form['adv_header']['internal_image'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Internal header image'),
+    '#default_value' => theme_get_setting('internal_image', 'dbca_agov'),
+    '#description'   => t("Enter a URL of the internal header image i.e: (/sites/default/files/your-background.jpg). To remove the background image, blank this field and save the settings."),
+  );
+
+  $form['adv_header']['header_bg'] = array(
+    '#type' => 'file',
+    '#title' => t('Upload header background image'),
+    '#size' => 40,
+    '#attributes' => array('enctype' => 'multipart/form-data'),
+    '#description' => t('If you don\'t jave direct access to the server, use this field to upload your header background image. Uploads limited to .png .gif .jpg .jpeg .apng .svg extensions'),
+    '#element_validate' => array('dbca_agov_header_bg_validate'),
+  );
+
+}
+
+
+/**
+* Implements hook_preprocess_html().
+* Apply custom CSS for nodes
+*/
+function dbca_agov_preprocess_html(&$variables) {
+
+if ($node = \Drupal::request()->attributes->get('node')) {
+$variables['attributes']['class'][] = 'page-node-' . $node->id();
+}
+
+if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+    $variables['term_id'] = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+}
+
+}
+
+
+
+/**
+ * Check and save the uploaded header background image
+ */
+function dbca_agov_header_bg_validate($element, FormStateInterface $form_state) {
+  global $base_url;
+
+  $validators = array('file_validate_extensions' => array('png gif jpg jpeg apng svg'));
+  $file = file_save_upload('header_bg', $validators, "public://", NULL, FILE_EXISTS_REPLACE);
+
+  if (!empty($file)) {
+    // change file's status from temporary to permanent and update file database
+    if ((is_object($file[0]) == 1)) {
+      $file[0]->status = FILE_STATUS_PERMANENT;
+      $file[0]->save();
+      $uri = $file[0]->getFileUri();
+      $file_url = file_create_url($uri);
+      $file_url = str_ireplace($base_url, '', $file_url);
+      $form_state->setValue('homepage_image', $file_url);
+    }
+ }
+}
+
+
+/* End Advanced DBCA Theme settings */
+
+
 function dbca_agov_preprocess_page(&$variables) {
+
+  // Get our DBCA Advanced settings
+  $variables['homepage_image'] = theme_get_setting('homepage_image','dbca_agov');
+  $variables['internal_image'] = theme_get_setting('internal_image','dbca_agov');
+
 
       // Load the node entity from current route
         if ($node = \Drupal::routeMatch()->getParameter('node')) {
@@ -25,10 +117,15 @@ function dbca_agov_preprocess_page_title(&$variables) {
  if ($node = \Drupal::routeMatch()->getParameter('node')) {
      }
  else {
-      $titles =    $variables['page']['#title'];
-       $t = explode("|",$titles );
-       $variables['title'] = $t[0];
-       $variables['subti'] = $t[1];
+//	if( $variable['page']['#title'] !== "") 
+//	{	
+       		$titles =    $variables['page']['#title'];
+//			if( strpos($titles , "|") !== false) {  
+			       $t = explode("|",$titles );
+			       $variables['title'] = $t[0];
+			       $variables['subti'] = $t[1];
+//			}
+//	}
  }
 }
 

@@ -10,7 +10,8 @@
     </div>
   </div>
 
-  <hr class="divider--less-top">
+
+
   <div class="row">
     <div class="col-md-4">
       {{ content.promo_1 }}
@@ -23,9 +24,28 @@
     </div>
   </div>
 
+<hr>
+ {% if content.above_content %}
+   <div class="row above-content">
+    <div class="col-xs-12">
+        {{ content.above_content }}
+    </div>
+   </div>
+ {% endif %}
+
+ {% if content.below_content %}
+
+<div class="row below-content">
+    <div class="col-xs-12">
+        {{ content.below_content }}
+</div>
+</div>
+{% endif %}
+
+
   <div class="row">
     <div class="col-md-8">
-      <hr>
+    
       {{ content.body_left }}
     </div>
 
