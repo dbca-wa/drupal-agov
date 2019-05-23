@@ -1,0 +1,117 @@
+/* 
+* Print stylesheet for DBCA 
+* @version 1.0 
+* @lastmodified 16.04.2019 
+*/
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,500,700,900');
+
+#page>header,.site-nav,.region-breadcrumb,#block-dbca-agov-tabs,.inline-tab-nav,.bar-parent,.presentedBy, #showAuthor,#below-content,.node_view,#footer,.scroll-to-top{
+    display:none;
+}
+#AuthorInfo, .social__item {
+    display:block;
+}
+.social__item a {
+    overflow:initial;
+    background-image: none;
+    display:block;
+    text-align:left;
+    text-indent: unset;
+}
+.accordionList .panel {
+    max-height: unset;
+    overflow: unset;
+}
+*{
+    background:transparent !important;
+    color:black !important;
+    text-shadow:none !important;
+    filter:none !important;
+    -ms-filter:none !important 
+}
+ body {
+    font-family:'Heebo',Arial,Helvetica,sans-serif;
+    background: #fff !important;
+    font-size: 14pt;
+    line-height: 1.5; 
+    color: #000;
+    font-weight:300;
+}
+img { max-width: 100% !important; }
+h1{
+    font-size:3rem;
+}
+h2{
+    font-weight:900;
+    line-height:132%;
+    color:#1a1a1a;
+    letter-spacing:0;
+    font-size:2.25rem
+    margin-bottom:1.25rem
+}
+h3{
+    font-size:1.75rem;
+    font-weight:700
+}
+h4{
+    font-size:1.5rem
+}
+h5{
+    font-size:1.1875rem
+}
+h6{
+    font-size:1rem
+}
+	
+a.btn, button.btn, a.btn--secondary, a.btn--secondary, button.btn--secondary, input[type="submit"].btn {
+    border:solid 1px #000
+}
+	
+a{
+    text-decoration:underline !important;
+    border:0 !important;
+    margin:6px 0 6px 0 !important;
+    padding:6px 0 6px 0 !important 
+    word-wrap: break-word;
+}
+
+a:before{
+    display:none !important 
+}
+section {
+    /* Absolute units */
+     margin-bottom: 2cm;
+    /* Section always get their own page */
+     page-break-before: always;
+}
+/* avoid splitting of ul elements */
+ ul {
+     page-break-inside: avoid;
+}
+/* Print at least 2 lines on the current page and 4 lines on the next page */
+ p {
+    widows: 4;
+    orphans: 2;
+}
+/* Display expansions of abbreviations */
+
+a[href]:after, a[href]:visited:after, a[href^="http"]::after, a[href^="https://"]:after, a:after {
+    content: " (" attr(href) ")";
+    font-weight:normal;
+    font-size: 14pt;
+
+}
+   a[href^="#"]:after,
+   a[href^="javascript"]:after {
+   		content: "";
+}
+
+iframe {
+     display: none;
+}
+/* page specific styles */
+@page {
+     margin: 2cm;
+}
+ 
+ 

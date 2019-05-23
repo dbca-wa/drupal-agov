@@ -15,6 +15,13 @@
  * - settings: An array containing the given settings.
  *
  * @see template_preprocess_slick_slide()
+
+ {% if item.caption.title %}
+            <h2 class="slide__title">{{ item.caption.title }}</h2>
+          {% endif %}
+
+
+
  */
 #}
 {%
@@ -34,6 +41,7 @@
 {% set slide %}
   {% block slick_slide %}
     {% if settings.split and not settings.unslick %}
+     
       <div class="slide__media">{{ item.slide }}</div>
     {% else %}
       {{ item.slide }}
@@ -53,15 +61,10 @@
   {% if item.caption %}
     {% block slick_caption %}
       {% if settings.fullwidth %}<div class="slide__constrained">{% endif %}
-
         <div class="slide__caption">
           {% if item.caption.overlay %}
             <div class="slide__overlay">{{ item.caption.overlay }}</div>
             {% if settings.data %}<div class="slide__data">{% endif %}
-          {% endif %}
-
-          {% if item.caption.title %}
-            <h2 class="slide__title">{{ item.caption.title }}</h2>
           {% endif %}
 
           {% if item.caption.alt %}
@@ -78,6 +81,8 @@
         </div>
 
       {% if settings.fullwidth %}</div>{% endif %}
+      {% if item.caption.title %}<span class="banner__credits">{{ item.caption.title }}</span>{% endif %}
+
     {% endblock %}
   {% endif %}
 

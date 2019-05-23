@@ -9,7 +9,8 @@
     logged_in ? 'user-logged-in',
     not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
     node_type ? 'page-node-type-' ~ node_type|clean_class,
-    term_id ? 'term-id-' ~ term_id,
+    page_id ? 'page-id-' ~ page_id,
+    parent_page_id ? 'page-id-' ~ parent_page_id,
     db_offline ? 'db-offline',
   ]
 %}

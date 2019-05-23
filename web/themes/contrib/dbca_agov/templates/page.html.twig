@@ -54,7 +54,7 @@
  * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
- * @see html.html.twig
+ * @see html.html.twig  
  */
 #}
 <div id="page-wrapper">
@@ -74,18 +74,19 @@
  </div>
  <div class="header_mobile">
 <div class="row">
-          <div class="col-xs-2 nav">
-          <a aria-hidden="false" id="toggle-icon" class="nav-toggle toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">Toggle menu</a>        
-          </div>
+	<div class="col-xs-2 nav">
+	<a aria-hidden="false" id="toggle-icon" class="nav-toggle toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">Toggle menu</a>  
+	</div>      
           <div class="col-xs-8 logo">
           {{ page.header_left }}
           </div>
           <div class="col-xs-2 search">
       
-<a href="/search/" class="search_icon">Search this website</a>
+<a href="/search" class="search_icon">Search this website</a>
 
           </div>
  </div>
+</div>
 </header>
 {{ page.primary_menu }}
 {% if page.sidebar_second %}
@@ -118,7 +119,7 @@
 
 </div>
 
-<div class="row-fluid">
+<div class="row-fluid bar-parent">
     <div class="col-xs-3 bar bar1">&nbsp;</div>
     <div class="col-xs-3 bar bar2">&nbsp;</div>
     <div class="col-xs-3 bar bar3">&nbsp;</div>
@@ -160,21 +161,26 @@
 
   {% if page.sidebar_second %}
     <aside class="{{ sidebar_second_class }}" role="complementary">
+      
       {{ page.sidebar_second }}
+     
     </aside>
   {% endif %}
 
 </main>
- {% if page.below_content %}
+
+{% if page.below_content %}
+<div id="below-content" class="below-content">
 <div class="wrapper">
-<div class="row below-content">
-    <div class="col-xs-12">
-        {{ page.below_content }}
+<div class="row">
+<div class="col-xs-12">
+{{ page.below_content }}
+</div>
 </div>
 </div>
 </div>
 {% endif %}
-<footer role="contentinfo">
+<footer role="contentinfo" id="footer">
    {% if page.fat_footer %}
    <div class="wrapper">
    <div class="pre-footer">
@@ -183,15 +189,24 @@
    </div>
    {% endif %}
 
-  <div class="wrapper">
-
-    {% if page.footer_top %}
-      <div class="footer-top">
-        {{ page.footer_top }}
+    <div class="footer-top">
+    <div class="row">
+    {% if page.footer_top_left %}
+      <div class="col-md-6">
+        {{ page.footer_top_left }}
       </div>
     {% endif %}
+    {% if page.footer_top_right %}
+      <div class="col-md-6">
+        {{ page.footer_top_right }}
+      </div>
+    {% endif %}
+    </div>
+    </div>
 
-    <div class="row footer-bottom">
+    <div class="footer-bottom">
+       <div class="wrapper">
+       <div class="row">
       {% if page.footer_left %}
         <div class="col-md-8">
           {{ page.footer_left }}
@@ -202,7 +217,9 @@
           {{ page.footer_right }}
         </div>
       {% endif %}
-    </div>
+      </div>
+      </div>
+
   </div>
 </footer>
 <a class="scroll-to-top" href="#skip-link">Back to top</a>

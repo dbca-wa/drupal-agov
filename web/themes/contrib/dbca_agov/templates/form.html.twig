@@ -13,9 +13,9 @@
 #}
 {% if element['#form_id'] == 'search_block_form' %}
 <div class="header_search hidden-xs">
-  <form{{ attributes }} action="/search" method="get" accept-charset="UTF-8" data-drupal-form-fields="edit-keys">
+  <form{{ attributes }} action="/search" name="headerSearch" method="get" accept-charset="UTF-8" data-drupal-form-fields="edit-keys">
     <div class="form-item">
-      <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Search this website...">
+      <input title="Enter the terms you wish to search for." required data-drupal-selector="edit-keys" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Search this website...">
       </input>
     </div>
     <div class="form-submit">

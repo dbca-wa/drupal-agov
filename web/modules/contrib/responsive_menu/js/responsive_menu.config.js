@@ -15,13 +15,13 @@
       $(context).find('body').once('responsive-menu-mmenu').each(function() {
 
         if (typeof($.mmenu) !== 'undefined') {
-
+	
           // Get the position and theme options from Drupal settings.
           var position = drupalSettings.responsive_menu.position,
             theme = drupalSettings.responsive_menu.theme,
             pagedim = drupalSettings.responsive_menu.pagedim,
             extension_keyboard = drupalSettings.responsive_menu.extension_keyboard;
-
+	
           var settings = {
             extensions: [
               theme,
@@ -32,10 +32,13 @@
               zposition: 'next',
               position: position
             },
-            screenReader: {
+	    screenReader: {
               aria: true,
               text: true
-            }
+            },
+	   backButton: {
+	      close: false
+	    }
           };
 
           var options = {
