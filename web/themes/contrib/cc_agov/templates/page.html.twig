@@ -54,10 +54,11 @@
  * - page.breadcrumb: Items for the breadcrumb region.
  *
  * @see template_preprocess_page()
- * @see html.html.twig
+ * @see html.html.twig  
  */
 #}
-
+<div id="page-wrapper">
+<div id="page">
 <header class="header" role="banner">
   <div class="header_desktop wrapper">
   {% if page.header_left or page.header_right %}
@@ -73,18 +74,19 @@
  </div>
  <div class="header_mobile">
 <div class="row">
-          <div class="col-xs-2 nav">
-          <!-- a href="#" class="nav-toggle" aria-hidden="false">Toggle menu</a -->          
-          </div>
+	<div class="col-xs-2 nav">
+	<a aria-hidden="false" id="toggle-icon" class="nav-toggle toggle responsive-menu-toggle-icon" title="Menu" href="#off-canvas">Toggle menu</a>  
+	</div>      
           <div class="col-xs-8 logo">
           {{ page.header_left }}
           </div>
           <div class="col-xs-2 search">
       
-<a href="/search/" class="search_icon">Search this website</a>
+<a href="/search" class="search_icon">Search this website</a>
 
           </div>
  </div>
+</div>
 </header>
 {{ page.primary_menu }}
 {% if page.sidebar_second %}
@@ -93,19 +95,21 @@
   {% set sidebar_second_class = 'sidebar' %}
 {% endif %}
 
-
-<div class="hero_header_section">
+<div {% if node.field_hero_image.entity.uri.value != ''  %}style="background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)),#266093 url({{ file_url(node.field_hero_image.entity.uri.value) }});"{% endif %}  class="hero_header_section">
 
 
  {% if is_front  %}
+
+
+
  {{ page.hero }}  
   {% else %}
 <div class="wrapper">
-    {{ page.breadcrumb }} 
+    {{ page.breadcrumb }}
  {{ page.hero }}
    <h1{{ title_attributes }}> {{ title }} </h1> 
     <p class="lead">
-    {{ node.field_standard_subtitle.value }}
+    {{ node.field_standard_subtitle.value }} 
     {{ subti }}
     </p>
 
@@ -115,7 +119,27 @@
 
 </div>
 
+<div class="row-fluid bar-parent">
+    <div class="col-xs-3 bar bar1">&nbsp;</div>
+    <div class="col-xs-3 bar bar2">&nbsp;</div>
+    <div class="col-xs-3 bar bar3">&nbsp;</div>
+    <div class="col-xs-3 bar bar4">&nbsp;</div>
+</div>
+
+{% if page.above_content %}
+<div class="wrapper">
+<div class="row above-content">
+<div class="col-xs-12">
+
+        {{ page.above_content }}
+  
+</div>
+</div>
+</div>
+  {% endif %}
+
 <main class="wrapper {{ main_class }}" role="main">
+
   <div class="{{ content_class }}">
     {{ page.highlighted }}
     <nav class="skip-to">
@@ -123,19 +147,40 @@
     </nav>
 
     {{ page.help }}
+
     {{ page.content }}
+
+{% if node %}
+<div class="category Published page-reviewed">
+      <b class="page-reviewed__label">Page reviewed </b>
+    <span class="page-reviewed__date">{{ node.changed.value|format_date('custom', 'd M Y') }}</span>
+</div>
+{% endif %}
+
   </div>
 
   {% if page.sidebar_second %}
     <aside class="{{ sidebar_second_class }}" role="complementary">
+      
       {{ page.sidebar_second }}
+     
     </aside>
   {% endif %}
 
 </main>
 
-
-<footer role="contentinfo">
+{% if page.below_content %}
+<div id="below-content" class="below-content">
+<div class="wrapper">
+<div class="row">
+<div class="col-xs-12">
+{{ page.below_content }}
+</div>
+</div>
+</div>
+</div>
+{% endif %}
+<footer role="contentinfo" id="footer">
    {% if page.fat_footer %}
    <div class="wrapper">
    <div class="pre-footer">
@@ -168,3 +213,5 @@
 </footer>
 <a class="scroll-to-top" href="#skip-link">Back to top</a>
 {{ page.bottom }}
+</div>
+</div>

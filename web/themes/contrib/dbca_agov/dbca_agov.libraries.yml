@@ -14,6 +14,7 @@ base:
       css/styles.css: {}
       css/style_dbca.css: {}
       css/bootstrap-grid.min.css: {}
+      css/print.css: {media: print}
   js:
     js/scripts.js: {}
 #    'https://use.fontawesome.com/releases/v5.2.0/js/all.js': { type: external }
