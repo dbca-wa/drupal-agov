@@ -1,16 +1,25 @@
 <?php
 
-class DrupalPractice_Sniffs_Yaml_RoutingAccessUnitTest extends CoderSniffUnitTest
+namespace DrupalPractice\Sniffs\Yaml;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class RoutingAccessUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
+    protected function getTestFiles($testFileBase)
+    {
         return [__DIR__.'/routing_access_test.routing.yml'];
-    }
+
+    }//end getTestFiles()
 
 
     /**
@@ -21,9 +30,9 @@ class DrupalPractice_Sniffs_Yaml_RoutingAccessUnitTest extends CoderSniffUnitTes
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -36,12 +45,12 @@ class DrupalPractice_Sniffs_Yaml_RoutingAccessUnitTest extends CoderSniffUnitTes
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(
-                7 => 1,
-                28 => 1,
-               );
+        return [
+            7  => 1,
+            28 => 1,
+        ];
 
     }//end getWarningList()
 

@@ -1,10 +1,14 @@
 <?php
 
+namespace Drupal\Sniffs\InfoFiles;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class Drupal_Sniffs_InfoFiles_AutoAddedKeysUnitTest extends CoderSniffUnitTest
+class AutoAddedKeysUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -16,9 +20,9 @@ class Drupal_Sniffs_InfoFiles_AutoAddedKeysUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -31,20 +35,28 @@ class Drupal_Sniffs_InfoFiles_AutoAddedKeysUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array(1 => 3);
+        return [1 => 3];
 
     }//end getWarningList()
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
-        return array(__DIR__ . '/test.info', __DIR__ . '/test.info.yml');
-    }
+    protected function getTestFiles($testFileBase)
+    {
+        return [
+            __DIR__.'/test.info',
+            __DIR__.'/test.info.yml',
+        ];
+
+    }//end getTestFiles()
 
 
 }//end class

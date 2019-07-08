@@ -44,6 +44,8 @@ base_components:
       css/components/visually-hidden/visually-hidden.css: {}
       css/components/watermark/watermark.css: {}
 
+
+
 agov_components:
   version: 1.x
   css:
@@ -71,6 +73,8 @@ agov_components:
     - core/drupal
     - core/jquery
     - core/jquery.once
+
+
 
 layouts:
   version: 1.x

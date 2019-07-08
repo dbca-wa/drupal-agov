@@ -1,12 +1,16 @@
 <?php
 
+namespace DrupalPractice\Sniffs\General;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * Unit test class for the OptionsT sniff.
  *
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class DrupalPractice_Sniffs_General_OptionsTUnitTest extends CoderSniffUnitTest
+class OptionsTUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -18,9 +22,9 @@ class DrupalPractice_Sniffs_General_OptionsTUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -33,9 +37,9 @@ class DrupalPractice_Sniffs_General_OptionsTUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(14 => 1);
+        return [14 => 1];
 
     }//end getWarningList()
 

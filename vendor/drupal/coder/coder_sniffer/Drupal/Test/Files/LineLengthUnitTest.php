@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_Files_LineLengthUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Files;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class LineLengthUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,9 +16,9 @@ class Drupal_Sniffs_Files_LineLengthUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -26,9 +31,9 @@ class Drupal_Sniffs_Files_LineLengthUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

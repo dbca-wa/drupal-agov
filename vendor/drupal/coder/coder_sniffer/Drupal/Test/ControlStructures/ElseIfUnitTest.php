@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_ControlStructures_ElseIfUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\ControlStructures;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ElseIfUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,12 +16,12 @@ class Drupal_Sniffs_ControlStructures_ElseIfUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                6 => 1,
-                9 => 1,
-               );
+        return [
+            6 => 1,
+            9 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -29,9 +34,9 @@ class Drupal_Sniffs_ControlStructures_ElseIfUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

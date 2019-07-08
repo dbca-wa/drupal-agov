@@ -1,11 +1,16 @@
 <?php
 /**
- * Drupal_Sniffs_Semantics_PregSecuritySniff.
+ * \Drupal\Sniffs\Semantics\PregSecuritySniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
+
+namespace Drupal\Sniffs\Semantics;
+
+use Drupal\Sniffs\Semantics\FunctionCall;
+use PHP_CodeSniffer\Files\File;
 
 /**
  * Check the usage of the preg functions to ensure the insecure /e flag isn't
@@ -15,7 +20,7 @@
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
-class Drupal_Sniffs_Semantics_PregSecuritySniff extends Drupal_Sniffs_Semantics_FunctionCall
+class PregSecuritySniff extends FunctionCall
 {
 
 
@@ -26,15 +31,15 @@ class Drupal_Sniffs_Semantics_PregSecuritySniff extends Drupal_Sniffs_Semantics_
      */
     public function registerFunctionNames()
     {
-        return array(
-                'preg_filter',
-                'preg_grep',
-                'preg_match',
-                'preg_match_all',
-                'preg_replace',
-                'preg_replace_callback',
-                'preg_split',
-               );
+        return [
+            'preg_filter',
+            'preg_grep',
+            'preg_match',
+            'preg_match_all',
+            'preg_replace',
+            'preg_replace_callback',
+            'preg_split',
+        ];
 
     }//end registerFunctionNames()
 
@@ -42,18 +47,18 @@ class Drupal_Sniffs_Semantics_PregSecuritySniff extends Drupal_Sniffs_Semantics_
     /**
      * Processes this function call.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-     * @param int                  $stackPtr     The position of the function call in
-     *                                           the stack.
-     * @param int                  $openBracket  The position of the opening
-     *                                           parenthesis in the stack.
-     * @param int                  $closeBracket The position of the closing
-     *                                           parenthesis in the stack.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile    The file being scanned.
+     * @param int                         $stackPtr     The position of the function call in
+     *                                                  the stack.
+     * @param int                         $openBracket  The position of the opening
+     *                                                  parenthesis in the stack.
+     * @param int                         $closeBracket The position of the closing
+     *                                                  parenthesis in the stack.
      *
      * @return void
      */
     public function processFunctionCall(
-        PHP_CodeSniffer_File $phpcsFile,
+        File $phpcsFile,
         $stackPtr,
         $openBracket,
         $closeBracket
@@ -84,7 +89,7 @@ class Drupal_Sniffs_Semantics_PregSecuritySniff extends Drupal_Sniffs_Semantics_
                     $warn,
                     $argument['start'],
                     'PregEFlag',
-                    array($tokens[$stackPtr]['content'])
+                    [$tokens[$stackPtr]['content']]
                 );
                 return;
             }

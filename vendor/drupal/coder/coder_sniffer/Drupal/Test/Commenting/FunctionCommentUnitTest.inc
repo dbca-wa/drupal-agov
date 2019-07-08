@@ -429,3 +429,27 @@ function test32($a, $b) {
 function test33($a, $b) {
 
 }
+
+/**
+ * Yield should be a recognised return statement.
+ *
+ * @return int
+ *   Integer value.
+ */
+function test34($a, $b) {
+  for ($i = 1; $i <= 3; $i++) {
+    yield $i;
+  }
+}
+
+/**
+ * Using \stdClass as type hint is ok, but not in the documentation.
+ *
+ * @param object $name
+ *   Some description.
+ * @param \stdClass $param2
+ *   Some description.
+ */
+function test35(\stdClass $name, \stdClass $param2) {
+
+}

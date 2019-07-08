@@ -234,7 +234,7 @@ class ConfigVariables
 			// screen, print, or any other CSS @media type (except "all")
 			'CSSselectMedia' => 'print',
 
-			// PAGE HEADERS & FOOTERS
+			// PAGE HEADERS & FOOTERS 
 			'forcePortraitHeaders' => false,
 
 			// Values used if simple FOOTER/HEADER given i.e. not array

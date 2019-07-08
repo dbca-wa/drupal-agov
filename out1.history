@@ -1,0 +1,100 @@
+ 1154  cd templates/
+ 1155  cd ..
+ 1156  ls
+ 1157  sudo vi dbca_agov.theme
+ 1158  cd templates/
+ 1159  ls
+ 1160  sudo vi breadcrumb.html.twig
+ 1161  ../../../../../vendor/drush/drush/./drush cr
+ 1162  sudo vi breadcrumb.html.twig
+ 1163  ../../../../../vendor/drush/drush/./drush cr
+ 1164  sudo vi breadcrumb.html.twig
+ 1165  ../../../../../vendor/drush/drush/./drush cr
+ 1166  cd ..
+ 1167  ls
+ 1168  sudo vi dbca_agov.theme
+ 1169  ../../../../vendor/drush/drush/./drush cr
+ 1170  sudo vi dbca_agov.theme
+ 1171  cd templates/
+ 1172  ls
+ 1173  sudo vi breadcrumb.html.twig
+ 1174  ../../../../../vendor/drush/drush/./drush cr
+ 1175  ls -al
+ 1176  cd ..
+ 1177  ls
+ 1178  cd. .
+ 1179  ls
+ 1180  cd ..
+ 1181  ls
+ 1182  cd dbca_agov/
+ 1183  ls
+ 1184  cd ..
+ 1185  ls
+ 1186  cd ../../../..
+ 1187  ls
+ 1188  cd flatbacks-web/
+ 1189  ls
+ 1190  cd vendor/
+ 1191  ls
+ 1192  cd ..
+ 1193  ls
+ 1194  cd web/
+ 1195  ls
+ 1196  cd modules/
+ 1197  ls
+ 1198  cd contrib/
+ 1199  ls
+ 1200  cd json_decode/
+ 1201  ls
+ 1202  cd src/
+ 1203  ls
+ 1204  cd Controller/
+ 1205  ls
+ 1206  sudo vi JsonDecodeController.php
+ 1207  cd ..
+ 1208  ls
+ 1209  cd Form/
+ 1210  ls
+ 1211  cd ..
+ 1212  ls
+ 1213  cd ..
+ 1214  ls
+ 1215  cd ..
+ 1216  ls
+ 1217  ls -al
+ 1218  cd ..
+ 1219  ls
+ 1220  cd ..
+ 1221  ls
+ 1222  cd dbca-web/
+ 1223  ls
+ 1224  cd patches/
+ 1225  ls
+ 1226  cd ..
+ 1227  ls
+ 1228  cd web/modules/contrib/
+ 1229  ls
+ 1230  cd entity_browser/
+ 1231  ls
+ 1232  cd src/
+ 1233  ls
+ 1234  sudo vi SelectionDisplayBase.php 
+ 1235  cd ..
+ 1236  git status
+ 1237  git status | more
+ 1238  git add vendor/
+ 1239  git status | more
+ 1240  git add web/core/modules/*
+ 1241  git status | more
+ 1242  git add web/modules/contrib/*
+ 1243  git add web/modules/contrib/ajax_facets/
+ 1244  git add web/modules/contrib/entity_usage/ web/modules/contrib/entity_reference_revisions/ web/modules/contrib/facets/config/schema/facets.blocks.schema.yml  web/modules/contrib/file_permissions/ 
+ 1245  git add web/modules/contrib/paragraphs/ web/modules/contrib/pdf_api/ web/modules/contrib/pdf_using_mpdf8/ web/modules/contrib/printable/ web/modules/contrib/search_api_page/ web/modules/contrib/webform/
+ 1246  git add web/themes/contrib/dbca_agov/img/*
+ 1247  git status | more
+ 1248  git add web/themes/contrib/dbca_agov/templates/*
+ 1249  git add web/themes/contrib/dbca_agov/css/print.css 
+ 1250  git commit -m "changes after the pdf implementation and templates changse"
+ 1251  git push
+ 1252  git status | more
+ 1253  history 100 > out1.history

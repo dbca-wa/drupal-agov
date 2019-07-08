@@ -1,6 +1,10 @@
 <?php
 
-class Drupal_Sniffs_InfoFiles_ClassFilesUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\InfoFiles;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ClassFilesUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -12,9 +16,9 @@ class Drupal_Sniffs_InfoFiles_ClassFilesUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -27,20 +31,25 @@ class Drupal_Sniffs_InfoFiles_ClassFilesUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
-        return array(__DIR__ . '/class_files.info');
-    }
+    protected function getTestFiles($testFileBase)
+    {
+        return [__DIR__.'/class_files.info'];
+
+    }//end getTestFiles()
 
 
 }//end class

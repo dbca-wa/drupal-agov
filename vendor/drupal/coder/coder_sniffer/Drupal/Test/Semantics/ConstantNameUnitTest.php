@@ -1,18 +1,27 @@
 <?php
 
-class Drupal_Sniffs_Semantics_ConstantNameUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Semantics;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ConstantNameUnitTest extends CoderSniffUnitTest
 {
 
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles()
+    protected function getTestFiles($testFileBase)
     {
         $dir = dirname(__FILE__);
-        return array($dir.'/constant_test.install', $dir.'/constant_test.module');
+        return [
+            $dir.'/constant_test.install',
+            $dir.'/constant_test.module',
+        ];
 
     }//end getTestFiles()
 
@@ -25,9 +34,9 @@ class Drupal_Sniffs_Semantics_ConstantNameUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -40,9 +49,9 @@ class Drupal_Sniffs_Semantics_ConstantNameUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array(3 => 1);
+        return [3 => 1];
 
     }//end getWarningList()
 

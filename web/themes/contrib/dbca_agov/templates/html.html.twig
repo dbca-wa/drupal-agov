@@ -21,7 +21,7 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
-   
+    <script>var agencyPage = 'page-id-{{ page_id }}';</script>
   </head>
   <body{{ attributes.addClass(body_classes) }}>
     <nav class="skip-to">

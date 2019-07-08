@@ -32,6 +32,7 @@ regions:
   footer_top_right: 'Footer top right'
   footer_left: 'Footer left'
   footer_right: 'Footer right'
+  footer_icons: 'Footer icons'
   bottom: 'Un-styled page bottom (site builder utility area)'
   # These next two regions are REQUIRED. They are special regions used in the
   # html.html.twig template instead of the page.html.twig template. And they are

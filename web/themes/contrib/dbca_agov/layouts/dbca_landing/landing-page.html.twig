@@ -40,20 +40,57 @@
     </div>
   </div>
 
-  <div class="row">
+
+{% if content.footer_1 %}
+  <div class="row display-flex">
+    {% for item in content.footer_1 %}
+      <div class="col-md-3">{{ item }}</div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+  <div class="row display-flex">
+ {% if content.footer_1 %}
     <div class="col-md-3">
       {{ content.footer_1 }}
     </div>
+{% endif %}
+ {% if content.footer_2 %}
     <div class="col-md-3">
       {{ content.footer_2 }}
     </div>
+{% endif %}
+ {% if content.footer_3 %}
     <div class="col-md-3">
       {{ content.footer_3 }}
     </div>
+{% endif %}
+ {% if content.footer_4 %}
   <div class="col-md-3">
       {{ content.footer_4 }}
     </div>
-
-   
+{% endif %}
+ {% if content.footer_5 %}
+    <div class="col-md-3">
+      {{ content.footer_5 }}
+    </div>
+{% endif %}
+ {% if content.footer_6 %}
+    <div class="col-md-3">
+      {{ content.footer_6 }}
+    </div>
+{% endif %}
+ {% if content.footer_7 %}
+    <div class="col-md-3">
+      {{ content.footer_7 }}
+    </div>
+{% endif %}
+ {% if content.footer_8 %}
+    <div class="col-md-3">
+      {{ content.footer_8 }}
+    </div>
+{% endif %}
   </div>
+
 </div>

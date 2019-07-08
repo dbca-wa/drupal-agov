@@ -8,11 +8,6 @@ use Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase;
 /**
  * Drupal 7 field instances source from database.
  *
- * @internal
- *
- * This class is marked as internal and should not be extended. Use
- * Drupal\migrate_drupal\Plugin\migrate\source\DrupalSqlBase instead.
- *
  * @MigrateSource(
  *   id = "d7_field_instance",
  *   source_module = "field"
@@ -40,6 +35,19 @@ class FieldInstance extends DrupalSqlBase {
       if (isset($this->configuration['bundle'])) {
         $query->condition('fci.bundle', $this->configuration['bundle']);
       }
+    }
+
+    // If the Drupal 7 Title module is enabled, we don't want to migrate the
+    // fields it provides. The values of those fields will be migrated to the
+    // base fields they were replacing.
+    if ($this->moduleExists('title')) {
+      $title_fields = [
+        'title_field',
+        'name_field',
+        'description_field',
+        'subject_field',
+      ];
+      $query->condition('fc.field_name', $title_fields, 'NOT IN');
     }
 
     return $query;

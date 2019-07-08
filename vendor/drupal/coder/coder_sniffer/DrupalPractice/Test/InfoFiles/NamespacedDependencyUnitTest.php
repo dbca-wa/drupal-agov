@@ -1,6 +1,10 @@
 <?php
 
-class DrupalPractice_Sniffs_InfoFiles_NamespacedDependencyUnitTest extends CoderSniffUnitTest
+namespace DrupalPractice\Sniffs\InfoFiles;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class NamespacedDependencyUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -12,9 +16,9 @@ class DrupalPractice_Sniffs_InfoFiles_NamespacedDependencyUnitTest extends Coder
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -27,24 +31,29 @@ class DrupalPractice_Sniffs_InfoFiles_NamespacedDependencyUnitTest extends Coder
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array(
-                9 => 1,
-                11 => 1,
-                13 => 1,
-               );
+        return [
+            9  => 1,
+            11 => 1,
+            13 => 1,
+        ];
 
     }//end getWarningList()
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
-        return array(__DIR__ . '/dependencies_test.info.yml');
-    }
+    protected function getTestFiles($testFileBase)
+    {
+        return [__DIR__.'/dependencies_test.info.yml'];
+
+    }//end getTestFiles()
 
 
 }//end class

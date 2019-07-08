@@ -1,12 +1,16 @@
 <?php
 
+namespace DrupalPractice\Sniffs\FunctionCalls;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * Unit test class for the CurlSslVerifier sniff.
  *
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class DrupalPractice_Sniffs_FunctionCalls_CurlSslVerifierUnitTest extends CoderSniffUnitTest
+class CurlSslVerifierUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -18,9 +22,9 @@ class DrupalPractice_Sniffs_FunctionCalls_CurlSslVerifierUnitTest extends CoderS
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -33,9 +37,9 @@ class DrupalPractice_Sniffs_FunctionCalls_CurlSslVerifierUnitTest extends CoderS
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(4 => 1);
+        return [4 => 1];
 
     }//end getWarningList()
 

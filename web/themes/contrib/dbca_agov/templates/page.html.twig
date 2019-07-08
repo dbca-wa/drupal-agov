@@ -97,11 +97,7 @@
 
 <div {% if node.field_hero_image.entity.uri.value != ''  %}style="background:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)),#266093 url({{ file_url(node.field_hero_image.entity.uri.value) }});"{% endif %}  class="hero_header_section">
 
-
  {% if is_front  %}
-
-
-
  {{ page.hero }}  
   {% else %}
 <div class="wrapper">
@@ -109,10 +105,8 @@
  {{ page.hero }}
    <h1{{ title_attributes }}> {{ title }} </h1> 
     <p class="lead">
-    {{ node.field_standard_subtitle.value }} 
-    {{ subti }}
+    {{node.body.summary}}
     </p>
-
 </div>
  {% endif %}
 
@@ -130,13 +124,11 @@
 <div class="wrapper">
 <div class="row above-content">
 <div class="col-xs-12">
-
         {{ page.above_content }}
-  
 </div>
 </div>
 </div>
-  {% endif %}
+{% endif %}
 
 <main class="wrapper {{ main_class }}" role="main">
 
@@ -189,21 +181,7 @@
    </div>
    {% endif %}
 
-    <div class="footer-top">
-    <div class="row">
-    {% if page.footer_top_left %}
-      <div class="col-md-6">
-        {{ page.footer_top_left }}
-      </div>
-    {% endif %}
-    {% if page.footer_top_right %}
-      <div class="col-md-6">
-        {{ page.footer_top_right }}
-      </div>
-    {% endif %}
-    </div>
-    </div>
-
+    
     <div class="footer-bottom">
        <div class="wrapper">
        <div class="row">

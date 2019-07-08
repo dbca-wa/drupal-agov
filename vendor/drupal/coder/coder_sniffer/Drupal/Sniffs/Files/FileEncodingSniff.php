@@ -1,6 +1,6 @@
 <?php
 /**
- * Drupal_Sniffs_Files_FileEncodingSniff.
+ * \Drupal\Sniffs\Files\FileEncodingSniff.
  *
  * @category  PHP
  * @package   PHP_CodeSniffer
@@ -10,8 +10,13 @@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
 
+namespace Drupal\Sniffs\Files;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+
 /**
- * Drupal_Sniffs_Files_FileEncodingSniff.
+ * \Drupal\Sniffs\Files\FileEncodingSniff.
  *
  * Validates the encoding of a file against a white list of allowed encodings.
  *
@@ -23,7 +28,7 @@
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Drupal_Sniffs_Files_FileEncodingSniff implements PHP_CodeSniffer_Sniff
+class FileEncodingSniff implements Sniff
 {
 
     /**
@@ -33,7 +38,7 @@ class Drupal_Sniffs_Files_FileEncodingSniff implements PHP_CodeSniffer_Sniff
      *
      * @var array
      */
-    public $allowedEncodings = array('UTF-8');
+    public $allowedEncodings = ['UTF-8'];
 
 
     /**
@@ -43,10 +48,10 @@ class Drupal_Sniffs_Files_FileEncodingSniff implements PHP_CodeSniffer_Sniff
      */
     public function register()
     {
-        return array(
-                T_INLINE_HTML,
-                T_OPEN_TAG,
-               );
+        return [
+            T_INLINE_HTML,
+            T_OPEN_TAG,
+        ];
 
     }//end register()
 
@@ -54,13 +59,13 @@ class Drupal_Sniffs_Files_FileEncodingSniff implements PHP_CodeSniffer_Sniff
     /**
      * Processes this sniff, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token in
-     *                                        the stack passed in $tokens.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param int                         $stackPtr  The position of the current token in
+     *                                               the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         // Not all PHP installs have the multi byte extension - nothing we can do.
         if (function_exists('mb_check_encoding') === false) {
@@ -78,7 +83,7 @@ class Drupal_Sniffs_Files_FileEncodingSniff implements PHP_CodeSniffer_Sniff
 
         if ($validEncodingFound === false) {
             $warning = 'File encoding is invalid, expected %s';
-            $data    = array(implode(' or ', $this->allowedEncodings));
+            $data    = [implode(' or ', $this->allowedEncodings)];
             $phpcsFile->addWarning($warning, $stackPtr, 'InvalidEncoding', $data);
         }
 

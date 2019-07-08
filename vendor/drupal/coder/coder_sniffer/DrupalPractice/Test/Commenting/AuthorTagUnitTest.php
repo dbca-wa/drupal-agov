@@ -1,6 +1,10 @@
 <?php
 
-class DrupalPractice_Sniffs_Commenting_AuthorTagUnitTest extends CoderSniffUnitTest
+namespace DrupalPractice\Sniffs\Commenting;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class AuthorTagUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -12,9 +16,9 @@ class DrupalPractice_Sniffs_Commenting_AuthorTagUnitTest extends CoderSniffUnitT
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -27,12 +31,12 @@ class DrupalPractice_Sniffs_Commenting_AuthorTagUnitTest extends CoderSniffUnitT
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(
-                7 => 1,
-                13 => 1,
-               );
+        return [
+            7  => 1,
+            13 => 1,
+        ];
 
     }//end getWarningList()
 

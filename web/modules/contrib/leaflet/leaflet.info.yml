@@ -4,10 +4,10 @@ description: Integration with the Leaflet map scripting library.
 # core: 8.x
 package: Leaflet
 dependencies:
-  - drupal:geofield
+  - geofield:geofield
 
-# Information added by Drupal.org packaging script on 2018-07-25
-version: '8.x-1.0-beta12'
+# Information added by Drupal.org packaging script on 2019-05-08
+version: '8.x-1.10'
 core: '8.x'
 project: 'leaflet'
-datestamp: 1532550784
+datestamp: 1557345796

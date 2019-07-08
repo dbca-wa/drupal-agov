@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_WhiteSpace_CloseBracketSpacingUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\WhiteSpace;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class CloseBracketSpacingUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,12 +16,12 @@ class Drupal_Sniffs_WhiteSpace_CloseBracketSpacingUnitTest extends CoderSniffUni
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                3 => 1,
-                7 => 1,
-               );
+        return [
+            3 => 1,
+            7 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -29,9 +34,9 @@ class Drupal_Sniffs_WhiteSpace_CloseBracketSpacingUnitTest extends CoderSniffUni
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

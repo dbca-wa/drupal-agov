@@ -7,10 +7,9 @@ use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityTypeInterface;
-use Drupal\Core\Link;
-use Drupal\Core\Url;
 use Drupal\link\LinkItemInterface;
 use Drupal\linky\LinkyInterface;
+use Drupal\linky\Url;
 use Drupal\user\UserInterface;
 
 /**
@@ -22,7 +21,7 @@ use Drupal\user\UserInterface;
  *   id = "linky",
  *   label = @Translation("Managed Link"),
  *   handlers = {
- *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
+ *     "view_builder" = "Drupal\linky\LinkyEntityViewBuilder",
  *     "list_builder" = "Drupal\linky\LinkyListBuilder",
  *     "views_data" = "Drupal\linky\Entity\LinkyViewsData",
  *
@@ -65,9 +64,9 @@ class Linky extends ContentEntityBase implements LinkyInterface {
    */
   public static function preCreate(EntityStorageInterface $storage_controller, array &$values) {
     parent::preCreate($storage_controller, $values);
-    $values += array(
+    $values += [
       'user_id' => \Drupal::currentUser()->id(),
-    );
+    ];
   }
 
   /**
@@ -151,21 +150,21 @@ class Linky extends ContentEntityBase implements LinkyInterface {
       ->setSetting('handler', 'default')
       ->setDefaultValueCallback('Drupal\node\Entity\Node::getCurrentUserId')
       ->setTranslatable(TRUE)
-      ->setDisplayOptions('view', array(
+      ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'author',
         'weight' => 0,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
         'weight' => 5,
-        'settings' => array(
+        'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
           'autocomplete_type' => 'tags',
           'placeholder' => '',
-        ),
-      ))
+        ],
+      ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
@@ -173,26 +172,26 @@ class Linky extends ContentEntityBase implements LinkyInterface {
       ->setLabel(t('Link'))
       ->setDescription(t('The location this managed link points to.'))
       ->setRequired(TRUE)
-      ->setSettings(array(
+      ->setSettings([
         'link_type' => LinkItemInterface::LINK_EXTERNAL,
         'title' => DRUPAL_REQUIRED,
-      ))
-      ->setDisplayOptions('view', array(
+      ])
+      ->setDisplayOptions('view', [
         'type' => 'link',
         'weight' => -2,
-      ))
-      ->setDisplayOptions('form', array(
+      ])
+      ->setDisplayOptions('form', [
         'type' => 'link_default',
         'weight' => -2,
-      ));
+      ]);
 
     $fields['langcode'] = BaseFieldDefinition::create('language')
       ->setLabel(t('Language code'))
       ->setDescription(t('The language code for the Managed Link entity.'))
-      ->setDisplayOptions('form', array(
+      ->setDisplayOptions('form', [
         'type' => 'language_select',
         'weight' => 10,
-      ))
+      ])
       ->setDisplayConfigurable('form', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
@@ -222,10 +221,12 @@ class Linky extends ContentEntityBase implements LinkyInterface {
    * {@inheritdoc}
    */
   public function toUrl($rel = 'canonical', array $options = []) {
+    $internalCanonical = parent::toUrl($rel, $options);
     if ($rel === 'canonical') {
+      $options['linky_entity_canonical'] = $internalCanonical;
       return Url::fromUri($this->link->uri, $options);
     }
-    return parent::toUrl($rel, $options);
+    return $internalCanonical;
   }
 
   /**

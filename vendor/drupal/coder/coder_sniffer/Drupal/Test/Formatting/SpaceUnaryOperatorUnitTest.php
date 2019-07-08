@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_Formatting_SpaceUnaryOperatorUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Formatting;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class SpaceUnaryOperatorUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,15 +16,15 @@ class Drupal_Sniffs_Formatting_SpaceUnaryOperatorUnitTest extends CoderSniffUnit
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                3 => 1,
-                4 => 1,
-                5 => 1,
-                6 => 1,
-                7 => 1,
-               );
+        return [
+            3 => 1,
+            4 => 1,
+            5 => 1,
+            6 => 1,
+            7 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -32,9 +37,9 @@ class Drupal_Sniffs_Formatting_SpaceUnaryOperatorUnitTest extends CoderSniffUnit
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

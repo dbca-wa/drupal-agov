@@ -25,7 +25,7 @@ class FontVariables
 			// only works using subsets (otherwise would add very large file)
 			// More than 1 font can be specified but each will add to the processing time of the script
 
-			'backupSubsFont' => ['dejavusanscondensed', 'freesans', 'sun-exta'],
+			'backupSubsFont' => ['helvetica', 'dejavusanscondensed', 'freesans', 'sun-exta'],
 
 			// Optionally set a font (name as defined below in 'fontdata') to use for CJK characters
 			// in Plane 2 Unicode (> U+20000) when using useSubstitutions.
@@ -93,6 +93,14 @@ class FontVariables
 			 */
 
 			'fontdata' => [
+				"helvetica" => [
+					'R' => "Helvetica.ttf",
+					'B' => "Helvetica-Bold.ttf",
+					'I' => "Helvetica-Oblique.ttf",
+					'BI' => "Helvetica-BoldOblique.ttf",
+					'useOTL' => 0xFF,
+					'useKashida' => 75,
+				],
 				"dejavusanscondensed" => [
 					'R' => "DejaVuSansCondensed.ttf",
 					'B' => "DejaVuSansCondensed-Bold.ttf",
@@ -305,20 +313,20 @@ class FontVariables
 			//     (Otherwise the order is irrelevant)
 			// Use the mPDF font-family names i.e. lowercase and no spaces (after any translations in $fonttrans)
 			// Always include "sans-serif", "serif" and "monospace" etc.
-			'sans_fonts' => ['dejavusanscondensed', 'sans', 'sans-serif', 'cursive', 'fantasy', 'dejavusans', 'freesans', 'liberationsans',
-				'arial', 'helvetica', 'verdana', 'geneva', 'lucida', 'arialnarrow', 'arialblack',
+			'sans_fonts' => ['helvetica', 'arial', 'dejavusanscondensed', 'sans', 'sans-serif', 'cursive', 'fantasy', 'dejavusans', 'freesans', 'liberationsans',
+				'verdana', 'geneva', 'lucida', 'arialnarrow', 'arialblack',
 				'franklin', 'franklingothicbook', 'tahoma', 'garuda', 'calibri', 'trebuchet', 'lucidagrande', 'microsoftsansserif',
 				'trebuchetms', 'lucidasansunicode', 'franklingothicmedium', 'albertusmedium', 'xbriyaz', 'albasuper', 'quillscript',
 				'humanist777', 'humanist777black', 'humanist777light', 'futura', 'hobo', 'segoeprint'
 			],
 
-			'serif_fonts' => ['dejavuserifcondensed', 'serif', 'dejavuserif', 'freeserif', 'liberationserif',
+			'serif_fonts' => ['helvetica', 'arial', 'dejavuserifcondensed', 'serif', 'dejavuserif', 'freeserif', 'liberationserif',
 				'timesnewroman', 'times', 'centuryschoolbookl', 'palatinolinotype', 'centurygothic',
 				'bookmanoldstyle', 'bookantiqua', 'cyberbit', 'cambria',
 				'norasi', 'charis', 'palatino', 'constantia', 'georgia', 'albertus', 'xbzar', 'algerian', 'garamond',
 			],
 
-			'mono_fonts' => ['dejavusansmono', 'mono', 'monospace', 'freemono', 'liberationmono', 'courier', 'ocrb', 'ocr-b', 'lucidaconsole',
+			'mono_fonts' => ['helvetica', 'dejavusansmono', 'mono', 'monospace', 'freemono', 'liberationmono', 'courier', 'ocrb', 'ocr-b', 'lucidaconsole',
 				'couriernew', 'monotypecorsiva'
 			],
 		];

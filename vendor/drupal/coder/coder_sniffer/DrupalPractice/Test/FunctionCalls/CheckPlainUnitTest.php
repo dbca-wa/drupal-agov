@@ -3,13 +3,17 @@
  * Unit test class for the CheckPlain sniff.
  */
 
+namespace DrupalPractice\Sniffs\FunctionCalls;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * Unit test class for the CheckPlain sniff.
  *
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class DrupalPractice_Sniffs_FunctionCalls_CheckPlainUnitTest extends CoderSniffUnitTest
+class CheckPlainUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -21,9 +25,9 @@ class DrupalPractice_Sniffs_FunctionCalls_CheckPlainUnitTest extends CoderSniffU
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -36,13 +40,11 @@ class DrupalPractice_Sniffs_FunctionCalls_CheckPlainUnitTest extends CoderSniffU
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(3 => 1);
+        return [3 => 1];
 
     }//end getWarningList()
 
 
 }//end class
-
-?>

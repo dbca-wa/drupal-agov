@@ -37,6 +37,7 @@ h3 {
     font-size: 1.75rem;
     margin-bottom: 1.25rem;
 }
+
 h4 {
     font-size: 1.3rem;
     margin-bottom: 1.25rem;
@@ -99,6 +100,49 @@ body.path-frontpage .hero_header_section * {
     margin: 2.5rem 0 2rem 0 !important;
 }
 
+/* Extra font awesome icons */
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot');
+  src:  url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fac {
+    font-family: "icomoon";
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.icon-fa-campfire:before, .fa-campfire:before  {
+  content: "\f6ba";
+}
+.icon-fa-lighthouse:before, .fa-lighthouse:before {
+  content: "\e900";
+}
+.icon-fa-drone-alt:before, .fa-drone-alt:before {
+  content: "\f860";
+}
+
+.icon-fa-turtle:before, .fa-turtle:before {
+  content: "\f726";
+}
 /***** 2 - STANDARDS *****/
 
 body,
@@ -120,6 +164,74 @@ body, html {
 address {
     font-style: initial;
 }
+
+
+table caption {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #6c757d;
+    text-align: left;
+    caption-side: bottom;
+}
+table th {
+    color: #fff;
+    background-color: #2D2F32;
+    border: 1px solid #000;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+
+table tbody tr:hover {
+    background-color: rgba(0,0,0,.075);
+}
+
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+	border: 1px solid #dee2e6;
+}
+
+table thead th {
+    text-align: inherit;
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+table td, table th {
+    padding: .75rem;
+    vertical-align: top;
+}
+
+table.nostyle {
+    border:none;
+
+}
+table.nostyle tbody tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+
+table.nostyle tbody tr:hover {
+    background-color: transparent;
+}
+
+table.nostyle th {
+    color: #000;
+    background-color: transparent;
+    border: none;
+}
+
 
 /***** 3 - LINKS / TITLES / TABS *****/
 
@@ -234,6 +346,13 @@ h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
     font-weight: 500;
     font-size: 1.25rem;
     margin-bottom: 1rem;
+}
+
+h3.box__title {
+    font-size: 1.50rem;
+}
+.box, .box--icon {
+    margin-top: 0;
 }
 
 .more-link a {
@@ -483,6 +602,7 @@ body.path-frontpage .hero_header_section {
 }
 main.wrapper {
     padding-top:60px;
+    padding-bottom: 60px;
 }
 blockquote::before, blockquote::after {
     font-family: 'Heebo',Arial,Helvetica,sans-serif;
@@ -505,6 +625,9 @@ blockquote p {
     border-color: #f5f5f5;
 }
 
+.block-region-above-content > .features {
+    margin-bottom:30px;
+}
 
 .alert {
     padding: 15px;
@@ -794,7 +917,7 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
 
 
 .item-1 .box a:hover i.far.fa-newspaper:before {
-    content: "\f1ea";
+    content: "\f27a";
 }
 
 .item-2 .box a:hover i.fas.fa-flask:before {
@@ -923,6 +1046,11 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
 
 */
 
+.sidebar .block:not(:first-child) {
+border-top: 6px solid #f5f5f5;
+    margin-top: 30px;
+    padding-top: 20px;
+}
 
 /* Author block */
 .authored-by { 
@@ -2481,6 +2609,9 @@ body.page-id-79 .presentedBy img {background: url(/themes/contrib/dbca_agov/img/
     display:none;
 }
 
+.hide { 
+    display:none;
+}
 /***** 13 - RESPONSIVE UTILITIES *****/
 
 
@@ -2568,6 +2699,9 @@ main .form-wrapper {
     margin: 0;
 }
 
+.box, .box--icon {
+    margin-top: 3.2em;
+}
 
 }
 

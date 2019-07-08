@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_WhiteSpace_OpenTagNewlineUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\WhiteSpace;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class OpenTagNewlineUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,11 +16,9 @@ class Drupal_Sniffs_WhiteSpace_OpenTagNewlineUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                1 => 1,
-               );
+        return [1 => 1];
 
     }//end getErrorList()
 
@@ -28,9 +31,9 @@ class Drupal_Sniffs_WhiteSpace_OpenTagNewlineUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

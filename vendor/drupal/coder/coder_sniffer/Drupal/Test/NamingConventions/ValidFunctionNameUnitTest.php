@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_NamingConventions_ValidFunctionNameUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\NamingConventions;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ValidFunctionNameUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,13 +16,13 @@ class Drupal_Sniffs_NamingConventions_ValidFunctionNameUnitTest extends CoderSni
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                3 => 1,
-                4 => 1,
-                8 => 1,
-               );
+        return [
+            3 => 1,
+            4 => 1,
+            8 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -30,9 +35,9 @@ class Drupal_Sniffs_NamingConventions_ValidFunctionNameUnitTest extends CoderSni
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

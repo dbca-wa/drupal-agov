@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_WhiteSpace_ObjectOperatorIndentUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\WhiteSpace;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ObjectOperatorIndentUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,14 +16,14 @@ class Drupal_Sniffs_WhiteSpace_ObjectOperatorIndentUnitTest extends CoderSniffUn
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                24 => 1,
-                26 => 1,
-                28 => 1,
-                30 => 1,
-               );
+        return [
+            24 => 1,
+            26 => 1,
+            28 => 1,
+            30 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -31,9 +36,9 @@ class Drupal_Sniffs_WhiteSpace_ObjectOperatorIndentUnitTest extends CoderSniffUn
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

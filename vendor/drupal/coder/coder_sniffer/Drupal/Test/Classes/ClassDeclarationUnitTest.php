@@ -1,6 +1,10 @@
 <?php
 
-class Drupal_Sniffs_Classes_ClassDeclarationUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Classes;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ClassDeclarationUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -12,13 +16,13 @@ class Drupal_Sniffs_Classes_ClassDeclarationUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                11 => 1,
-                19 => 1,
-                28 => 1,
-               );
+        return [
+            11 => 1,
+            19 => 1,
+            28 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -31,9 +35,9 @@ class Drupal_Sniffs_Classes_ClassDeclarationUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

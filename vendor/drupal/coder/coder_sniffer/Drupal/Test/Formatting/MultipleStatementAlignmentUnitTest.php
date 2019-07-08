@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_Formatting_MultipleStatementAlignmentUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Formatting;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class MultipleStatementAlignmentUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,20 +16,20 @@ class Drupal_Sniffs_Formatting_MultipleStatementAlignmentUnitTest extends CoderS
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                8 => 1,
-                10 => 1,
-                11 => 1,
-                13 => 1,
-                14 => 1,
-                16 => 1,
-                17 => 1,
-                19 => 1,
-                20 => 1,
-                30 => 1,
-               );
+        return [
+            8  => 1,
+            10 => 1,
+            11 => 1,
+            13 => 1,
+            14 => 1,
+            16 => 1,
+            17 => 1,
+            19 => 1,
+            20 => 1,
+            30 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -37,9 +42,9 @@ class Drupal_Sniffs_Formatting_MultipleStatementAlignmentUnitTest extends CoderS
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

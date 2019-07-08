@@ -30,6 +30,9 @@ landing_page:
       label: Footer region 3
     footer_4:
       label: Footer region 4
+    footer_icons:
+      label: Footer icons
+
 
 
 
@@ -65,5 +68,9 @@ dbca_landing:
       label: Footer region 3
     footer_4:
       label: Footer region 4
+    footer_icons:
+      label: Footer icons
+
+
 
 

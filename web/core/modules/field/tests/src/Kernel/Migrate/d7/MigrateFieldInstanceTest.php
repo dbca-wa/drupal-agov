@@ -4,8 +4,6 @@ namespace Drupal\Tests\field\Kernel\Migrate\d7;
 
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\FieldConfigInterface;
-use Drupal\taxonomy\Entity\Vocabulary;
-use Drupal\Tests\migrate\Kernel\NodeCommentCombinationTrait;
 use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
 
 /**
@@ -15,19 +13,16 @@ use Drupal\Tests\migrate_drupal\Kernel\d7\MigrateDrupal7TestBase;
  */
 class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
 
-  use NodeCommentCombinationTrait;
-
   /**
    * {@inheritdoc}
    */
   public static $modules = [
     'comment',
     'datetime',
-    'file',
     'image',
     'link',
+    'menu_ui',
     'node',
-    'system',
     'taxonomy',
     'telephone',
     'text',
@@ -38,15 +33,7 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
    */
   protected function setUp() {
     parent::setUp();
-    $this->installConfig(static::$modules);
-    $this->createNodeCommentCombination('page');
-    $this->createNodeCommentCombination('article');
-    $this->createNodeCommentCombination('blog');
-    $this->createNodeCommentCombination('book');
-    $this->createNodeCommentCombination('forum', 'comment_forum');
-    $this->createNodeCommentCombination('test_content_type');
-    Vocabulary::create(['vid' => 'test_vocabulary'])->save();
-    $this->executeMigrations(['d7_field', 'd7_field_instance']);
+    $this->migrateFields();
   }
 
   /**
@@ -132,6 +119,16 @@ class MigrateFieldInstanceTest extends MigrateDrupal7TestBase {
     $this->assertLinkFields('node.test_content_type.field_link', DRUPAL_OPTIONAL);
     $this->assertLinkFields('node.article.field_link', DRUPAL_DISABLED);
     $this->assertLinkFields('node.blog.field_link', DRUPAL_REQUIRED);
+
+    // Tests that fields created by the Title module are not migrated.
+    $title_field = FieldConfig::load('node.test_content_type.title_field');
+    $this->assertNull($title_field);
+    $subject_field = FieldConfig::load('comment.comment_node_article.subject_field');
+    $this->assertNull($subject_field);
+    $name_field = FieldConfig::load('taxonomy_term.test_vocabulary.name_field');
+    $this->assertNull($name_field);
+    $description_field = FieldConfig::load('taxonomy_term.test_vocabulary.description_field');
+    $this->assertNull($description_field);
   }
 
   /**

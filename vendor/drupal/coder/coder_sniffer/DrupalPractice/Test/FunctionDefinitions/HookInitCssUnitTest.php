@@ -1,12 +1,16 @@
 <?php
 
+namespace DrupalPractice\Sniffs\FunctionDefinitions;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * Unit test class for the HookInitCss sniff.
  *
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class DrupalPractice_Sniffs_FunctionDefinitions_HookInitCssUnitTest extends CoderSniffUnitTest
+class HookInitCssUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -18,9 +22,9 @@ class DrupalPractice_Sniffs_FunctionDefinitions_HookInitCssUnitTest extends Code
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -33,23 +37,28 @@ class DrupalPractice_Sniffs_FunctionDefinitions_HookInitCssUnitTest extends Code
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array(
-                7 => 1,
-                14 => 1,
-               );
+        return [
+            7  => 1,
+            14 => 1,
+        ];
 
     }//end getWarningList()
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
-        return array(__DIR__ . '/test.module');
-    }
+    protected function getTestFiles($testFileBase)
+    {
+        return [__DIR__.'/test.module'];
+
+    }//end getTestFiles()
 
 
 }//end class

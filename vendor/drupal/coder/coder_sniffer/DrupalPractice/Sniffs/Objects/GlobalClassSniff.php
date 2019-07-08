@@ -1,11 +1,17 @@
 <?php
 /**
- * DrupalPractice_Sniffs_Objects_GlobalClassSniff.
+ * \DrupalPractice\Sniffs\Objects\GlobalClassSniff.
  *
  * @category PHP
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
+
+namespace DrupalPractice\Sniffs\Objects;
+
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use DrupalPractice\Project;
 
 /**
  * Checks that Node::load() calls and friends are not used in forms, controllers or
@@ -15,7 +21,7 @@
  * @package  PHP_CodeSniffer
  * @link     http://pear.php.net/package/PHP_CodeSniffer
  */
-class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_Sniff
+class GlobalClassSniff implements Sniff
 {
 
     /**
@@ -23,14 +29,14 @@ class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_
      *
      * @var string[]
      */
-    protected $classes = array(
-                          'File',
-                          'Node',
-                          'NodeType',
-                          'Role',
-                          'Term',
-                          'User',
-                         );
+    protected $classes = [
+        'File',
+        'Node',
+        'NodeType',
+        'Role',
+        'Term',
+        'User',
+    ];
 
 
     /**
@@ -40,7 +46,7 @@ class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_
      */
     public function register()
     {
-        return array(T_STRING);
+        return [T_STRING];
 
     }//end register()
 
@@ -48,13 +54,13 @@ class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                         in the stack passed in $tokens.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param int                         $stackPtr  The position of the current token
+     *                                               in the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -64,7 +70,7 @@ class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_
             || $tokens[($stackPtr + 1)]['code'] !== T_DOUBLE_COLON
             || isset($tokens[($stackPtr + 2)]) === false
             || $tokens[($stackPtr + 2)]['code'] !== T_STRING
-            || in_array($tokens[($stackPtr + 2)]['content'], array('load', 'loadMultiple')) === false
+            || in_array($tokens[($stackPtr + 2)]['content'], ['load', 'loadMultiple']) === false
             || isset($tokens[($stackPtr + 3)]) === false
             || $tokens[($stackPtr + 3)]['code'] !== T_OPEN_PARENTHESIS
             || empty($tokens[$stackPtr]['conditions']) === true
@@ -84,18 +90,23 @@ class DrupalPractice_Sniffs_Objects_GlobalClassSniff implements PHP_CodeSniffer_
         $classPtr    = key($tokens[$stackPtr]['conditions']);
         $extendsName = $phpcsFile->findExtendedClassName($classPtr);
 
+        // Check if the class implements ContainerInjectionInterface.
+        $implementedInterfaceNames = $phpcsFile->findImplementedInterfaceNames($classPtr);
+        $canAccessContainer        = !empty($implementedInterfaceNames) && in_array('ContainerInjectionInterface', $implementedInterfaceNames);
+
         if (($extendsName === false
-            || in_array($extendsName, DrupalPractice_Sniffs_Objects_GlobalDrupalSniff::$baseClasses) === false)
-            && DrupalPractice_Project::isServiceClass($phpcsFile, $classPtr) === false
+            || in_array($extendsName, GlobalDrupalSniff::$baseClasses) === false)
+            && Project::isServiceClass($phpcsFile, $classPtr) === false
+            && $canAccessContainer === false
         ) {
             return;
         }
 
         $warning = '%s::%s calls should be avoided in classes, use dependency injection instead';
-        $data    = array(
-                    $tokens[$stackPtr]['content'],
-                    $tokens[($stackPtr + 2)]['content'],
-                   );
+        $data    = [
+            $tokens[$stackPtr]['content'],
+            $tokens[($stackPtr + 2)]['content'],
+        ];
         $phpcsFile->addWarning($warning, $stackPtr, 'GlobalClass', $data);
 
     }//end process()

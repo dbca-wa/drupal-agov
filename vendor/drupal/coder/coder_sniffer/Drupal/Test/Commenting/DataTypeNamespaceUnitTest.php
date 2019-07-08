@@ -1,7 +1,12 @@
 <?php
 
-class Drupal_Sniffs_Commenting_DataTypeNamespaceUnitTest extends CoderSniffUnitTest
+namespace Drupal\Sniffs\Commenting;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class DataTypeNamespaceUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -11,13 +16,14 @@ class Drupal_Sniffs_Commenting_DataTypeNamespaceUnitTest extends CoderSniffUnitT
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                15 => 1,
-                18 => 1,
-                29 => 1,
-               );
+        return [
+            15 => 1,
+            18 => 1,
+            21 => 1,
+            31 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -30,9 +36,9 @@ class Drupal_Sniffs_Commenting_DataTypeNamespaceUnitTest extends CoderSniffUnitT
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 

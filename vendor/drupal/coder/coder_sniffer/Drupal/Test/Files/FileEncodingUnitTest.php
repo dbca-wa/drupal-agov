@@ -1,6 +1,10 @@
 <?php
 
-class Drupal_Tests_Files_FileEncodingUnitTest extends CoderSniffUnitTest
+namespace PHP_CodeSniffer\Standards\Drupal\Tests\Files;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class FileEncodingUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -10,13 +14,11 @@ class Drupal_Tests_Files_FileEncodingUnitTest extends CoderSniffUnitTest
      * The key of the array should represent the line number and the value
      * should represent the number of errors that should occur on that line.
      *
-     * @param string $testFile The name of the file being tested.
-     *
      * @return array<int, int>
      */
-    public function getErrorList($testFile='')
+    public function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -27,15 +29,11 @@ class Drupal_Tests_Files_FileEncodingUnitTest extends CoderSniffUnitTest
      * The key of the array should represent the line number and the value
      * should represent the number of warnings that should occur on that line.
      *
-     * @param string $testFile The name of the file being tested.
-     *
      * @return array<int, int>
      */
-    public function getWarningList($testFile='')
+    public function getWarningList()
     {
-        return array(
-                    1 => 1,
-                   );
+        return [1 => 1];
 
     }//end getWarningList()
 

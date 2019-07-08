@@ -16,7 +16,7 @@
 	    {% if item.url %}
 	       <a href="{{ item.url }}">{{ item.text }}</a> 
             {% else %}
-	       {{ bread }} 
+		{{ item.text }}    {#  /* {{ bread }} */ #}
 	    {% endif %}
         </li>
       {% endfor %}

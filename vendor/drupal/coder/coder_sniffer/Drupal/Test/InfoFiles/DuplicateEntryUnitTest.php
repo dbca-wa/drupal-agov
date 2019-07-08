@@ -1,12 +1,16 @@
 <?php
 
+namespace Drupal\Sniffs\InfoFiles;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
  * Unit test class for the DuplicateEntry sniff.
  *
  * A sniff unit test checks a .inc file for expected violations of a single
  * coding standard. Expected errors and warnings are stored in this class.
  */
-class Drupal_Sniffs_InfoFiles_DuplicateEntryUnitTest extends CoderSniffUnitTest
+class DuplicateEntryUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -18,11 +22,9 @@ class Drupal_Sniffs_InfoFiles_DuplicateEntryUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                1 => 1,
-               );
+        return [1 => 1];
 
     }//end getErrorList()
 
@@ -35,20 +37,25 @@ class Drupal_Sniffs_InfoFiles_DuplicateEntryUnitTest extends CoderSniffUnitTest
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
+
 
     /**
      * Returns a list of test files that should be checked.
      *
+     * @param string $testFileBase The base path that the unit tests files will have.
+     *
      * @return array The list of test files.
      */
-    protected function getTestFiles() {
-        return array(__DIR__ . '/test.info');
-    }
+    protected function getTestFiles($testFileBase)
+    {
+        return [__DIR__.'/test.info'];
+
+    }//end getTestFiles()
 
 
 }//end class

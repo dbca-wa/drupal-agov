@@ -1,6 +1,10 @@
 <?php
 
-class DrupalPractice_Sniffs_Commenting_ExpectedExceptionUnitTest extends CoderSniffUnitTest
+namespace DrupalPractice\Sniffs\Commenting;
+
+use Drupal\Test\CoderSniffUnitTest;
+
+class ExpectedExceptionUnitTest extends CoderSniffUnitTest
 {
 
 
@@ -12,9 +16,9 @@ class DrupalPractice_Sniffs_Commenting_ExpectedExceptionUnitTest extends CoderSn
      *
      * @return array(int => int)
      */
-    protected function getErrorList($testFile)
+    protected function getErrorList()
     {
-        return array();
+        return [];
 
     }//end getErrorList()
 
@@ -27,14 +31,14 @@ class DrupalPractice_Sniffs_Commenting_ExpectedExceptionUnitTest extends CoderSn
      *
      * @return array(int => int)
      */
-    protected function getWarningList($testFile)
+    protected function getWarningList()
     {
-        return array(
-                8 => 1,
-                9 => 1,
-                10 => 1,
-                11 => 1,0
-               );
+        return [
+            8  => 1,
+            9  => 1,
+            10 => 1,
+            11 => 1,0
+        ];
 
     }//end getWarningList()
 

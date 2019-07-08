@@ -1,10 +1,15 @@
 <?php
 
+namespace Drupal\Sniffs\ControlStructures;
+
+use Drupal\Test\CoderSniffUnitTest;
+
 /**
- * Class Drupal_Sniffs_ControlStructures_ControlSignatureUnitTest
+ * Class ControlSignatureUnitTest
  */
-class Drupal_Sniffs_ControlStructures_ControlSignatureUnitTest extends CoderSniffUnitTest
+class ControlSignatureUnitTest extends CoderSniffUnitTest
 {
+
 
     /**
      * Returns the lines where errors should occur.
@@ -14,12 +19,12 @@ class Drupal_Sniffs_ControlStructures_ControlSignatureUnitTest extends CoderSnif
      *
      * @return array(int => int)
      */
-    public function getErrorList($testFile)
+    public function getErrorList()
     {
-        return array(
-                  6 => 1,
-                  8 => 1,
-               );
+        return [
+            6 => 1,
+            8 => 1,
+        ];
 
     }//end getErrorList()
 
@@ -32,9 +37,9 @@ class Drupal_Sniffs_ControlStructures_ControlSignatureUnitTest extends CoderSnif
      *
      * @return array(int => int)
      */
-    public function getWarningList($testFile)
+    public function getWarningList()
     {
-        return array();
+        return [];
 
     }//end getWarningList()
 
