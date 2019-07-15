@@ -74,9 +74,10 @@ $field_name = 'field_category';
 //$variables['page_id'] = 
 		$ar  = $node_details->toArray();
 
-
-$variables['page_id'] = $ar['field_agency'][0]["target_id"] ;
-$variables['parent_page_id'] =  $ar['field_agency'][1]["target_id"];
+if(!empty($ar['field_agency'][0]["target_id"])) {
+$variables['page_id'] = $ar['field_agency'][0]["target_id"] ; }
+if(!empty($ar['field_agency'][1]["target_id"])) {
+$variables['parent_page_id'] =  $ar['field_agency'][1]["target_id"]; }
 
 
 //foreach($ar as $fn) {
@@ -154,8 +155,10 @@ function dbca_agov_preprocess_page(&$variables) {
        else {
             $titles =    $variables['page']['#title'];
              $t = explode("|",$titles );
-            $variables['title'] = $t[0];
-            $variables['subti'] = $t[1];
+	if(!empty($t[0]))
+ 		{            $variables['title'] = $t[0];}
+ 	if(!empty($t[1]))
+		{            $variables['subti'] = $t[1]; }
         }
 }
 
@@ -166,20 +169,25 @@ function dbca_agov_preprocess_page_title(&$variables) {
  else {
 //	if( $variable['page']['#title'] !== "") 
 //	{	
+		if(!empty($variables['page']['#title'])) {
        		$titles =    $variables['page']['#title'];
 //			if( strpos($titles , "|") !== false) {  
 			       $t = explode("|",$titles );
-			       $variables['title'] = $t[0];
-			       $variables['subti'] = $t[1];
+			if(!empty($t[0]))		
+ 			{			       $variables['title'] = $t[0];}
+			if(!empty($t[1]))			
+			{			       $variables['subti'] = $t[1];}
 //			}
 //	}
+	}
  }
 }
 
 
 function dbca_agov_preprocess_breadcrumb(&$variables) {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
-      $titles =    $variables['page']['#title'];
+      if(!empty($variables['page']['#title'])) {
+	$titles =    $variables['page']['#title'];
       $titles = $node->getTitle();
         if (!empty($titles)) {
            $t = explode("|",$titles );
@@ -194,17 +202,21 @@ function dbca_agov_preprocess_breadcrumb(&$variables) {
         if (!empty($page_title)) {
        $t = explode("|",$page_title);
         //this variable will avaliable in twig file. 
-        if($t[0] != "" && $t[1] != '') { 
+        if(!empty($t[0]) && !empty($t[1])) {
+	if($t[0] != "" && $t[1] != '') { 
 //        $variables['breadcrumb'][] = array( 'text' => $t[0]); 
          $variables['bread'] = $t[0];
         }
+	}
         else {
   //          $variables['breadcrumb'][] = array( 'text' => $page_title);
              $variables['bread'] = $page_title;
         }
+	
         }
         
     }
+  }
 }
 
 /**
