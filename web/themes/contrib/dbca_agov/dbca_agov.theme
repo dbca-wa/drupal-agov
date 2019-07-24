@@ -156,9 +156,12 @@ function dbca_agov_preprocess_page(&$variables) {
             $titles =    $variables['page']['#title'];
              $t = explode("|",$titles );
 	if(!empty($t[0]))
- 		{            $variables['title'] = $t[0];}
+ 		{           
+			//	 $variables['title'] = $t[0];
+		}
  	if(!empty($t[1]))
-		{            $variables['subti'] = $t[1]; }
+		{            $variables['subti'] = $t[1]; 
+		}
         }
 }
 
@@ -174,11 +177,17 @@ function dbca_agov_preprocess_page_title(&$variables) {
 //			if( strpos($titles , "|") !== false) {  
 			       $t = explode("|",$titles );
 			if(!empty($t[0]))		
- 			{			       $variables['title'] = $t[0];}
+ 			{		
+				       $variables['title'] = $t[0];
+			}
 			if(!empty($t[1]))			
-			{			       $variables['subti'] = $t[1];}
-//			}
+			{			       
+						$variables['subti'] = $t[1];
+			}
+
 //	}
+//	}
+
 	}
  }
 }

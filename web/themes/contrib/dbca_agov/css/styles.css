@@ -108,6 +108,7 @@ body.path-frontpage .hero_header_section * {
 
 /* Extra font awesome icons */
 
+
 @font-face {
   font-family: 'icomoon';
   src:  url('../fonts/icomoon.eot');
@@ -136,7 +137,20 @@ body.path-frontpage .hero_header_section * {
 
 }
 
-.icon-fa-campfire:before, .fa-campfire:before  {
+
+.icon-fa-fox:before, .fa-fox:before  {
+  content: "\e901";
+}
+.icon-fa-paw-claws:before, .fa-paw-claws:before {
+  content: "\f702";
+}
+.icon-fa-tree:before, .fa-tree:before {
+  content: "\e903";
+}
+.icon-fa-turtle:before, .fa-turtle:before {
+  content: "\f726";
+}
+.icon-fa-campfire:before, .fa-campfire:before {
   content: "\f6ba";
 }
 .icon-fa-lighthouse:before, .fa-lighthouse:before {
@@ -146,9 +160,7 @@ body.path-frontpage .hero_header_section * {
   content: "\f860";
 }
 
-.icon-fa-turtle:before, .fa-turtle:before {
-  content: "\f726";
-}
+
 /***** 2 - STANDARDS *****/
 
 body,
