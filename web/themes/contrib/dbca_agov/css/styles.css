@@ -773,6 +773,9 @@ ul.list-item li a.relatedbox {
 .relatedbox-content {
     position: relative;
 }
+.relatedbox .figure-caption {
+    display: none;
+}
 ul.list-item li a.relatedbox:hover {
     border-bottom-color: #d54614;
 }
