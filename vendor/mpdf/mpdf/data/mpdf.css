@@ -97,3 +97,8 @@ span.mpdf_toc_p_level_2 { /* Page no. level 2 - may be inside <a> */
 span.field--name-title {
 display:none;
 }
+
+td.text-align-right {
+	text-align: right;
+}
+
