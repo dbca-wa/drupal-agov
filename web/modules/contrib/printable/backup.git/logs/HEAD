@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 d5c6b9da4d1ae3aa865818efe8e5f7a7430dd121 root <root@nitins-mate-dev.lan.fyi> 1554450161 +0800	clone: from /home/nitins@corporateict.domain/.composer/cache/vcs/https---git.drupalcode.org-project-printable.git/
+d5c6b9da4d1ae3aa865818efe8e5f7a7430dd121 d5c6b9da4d1ae3aa865818efe8e5f7a7430dd121 root <root@nitins-mate-dev.lan.fyi> 1554450161 +0800	checkout: moving from 8.x-1.x to d5c6b9da4d1ae3aa865818efe8e5f7a7430dd121
+d5c6b9da4d1ae3aa865818efe8e5f7a7430dd121 1afe667144db5433edbc895151c235714ffda1a5 root <root@nitins-mate-dev.lan.fyi> 1562636344 +0800	commit: to meet the permission only for annual to be printable/pdf.
+1afe667144db5433edbc895151c235714ffda1a5 25e074aa38374a32f5cceed294f54410ff8f40e5 root <root@nitins-mate-dev.lan.fyi> 1562742973 +0800	commit: header and footer changes
+25e074aa38374a32f5cceed294f54410ff8f40e5 3473e81b343e6087ac81419d94be19d99f692a38 root <root@nitins-mate-dev.lan.fyi> 1563162818 +0800	commit: notices fixed

@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for printer friendly version of entities.
+ *
+ * Available variables:
+ * - logo_url: URL to logo used in the theme.
+ *
+ * @ingroup themeable
+ */
+#}
+{#<img class="img-responsive" src="/opt/app-root/src/web/sites/default/files/bannerr.jpg" style="margin: -30px -30px"/> #}
+
+<p><sethtmlpagefooter name="html_myFooter1" page="O" show-this-page="1" value="ON"></sethtmlpagefooter></p>
+<div class="pdfpage hide" style="margin-bottom:0;margin-footer:0;padding:0"><htmlpageheader class="hide" name="html_myHeader1"> 
+ <htmlpagefooter class="hide" name="html_myFooter1"> 
+<table width="100%">
+	<tbody>
+		<tr>
+{#			<td style="text-align:right;width:100%;height:.2em">Department of Biodiversity, Conservation and Attractions <strong>2018-19 Annual Report </strong> {PAGENO} / nbpg  </td>  #}
+		</tr>
+	</tbody>
+</table>
+</htmlpagefooter></div>

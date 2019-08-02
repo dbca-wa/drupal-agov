@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://git.drupalcode.org/project/printable.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "8.x-1.x"]
+	remote = origin
+	merge = refs/heads/8.x-1.x
+[remote "composer"]
+	url = https://git.drupalcode.org/project/printable.git
+	fetch = +refs/heads/*:refs/remotes/composer/*
