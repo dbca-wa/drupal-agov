@@ -102,3 +102,97 @@ td.text-align-right {
 	text-align: right;
 }
 
+table th.text-align-right {
+text-align: right;
+}
+
+/* table formating for print pdf */
+
+table caption {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: #6c757d;
+    text-align: left;
+    caption-side: bottom;
+}
+table th {
+    color: #fff;
+    background-color: #2D2F32;
+    border: 1px solid #000;
+}
+
+ 
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+ 
+
+table tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.05);
+}
+
+ 
+
+table tbody tr:hover {
+    background-color: rgba(0,0,0,.075);
+}
+
+ 
+
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border: 1px solid #dee2e6;
+    
+}
+
+ 
+
+table thead th {
+    text-align: inherit;
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+table td, table th {
+    padding: .75rem;
+    vertical-align: top;
+}
+
+ 
+
+table.nostyle {
+    border:none;
+
+ 
+
+}
+table.nostyle tbody tr:nth-of-type(odd) {
+    background-color: transparent;
+}
+
+ 
+
+table.nostyle tbody tr:hover {
+    background-color: transparent;
+}
+
+ 
+
+table.nostyle th {
+    color: #000;
+    background-color: transparent;
+    border: none;
+}
+
+
