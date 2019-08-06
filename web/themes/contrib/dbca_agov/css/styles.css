@@ -338,7 +338,6 @@ h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
 }
  .content-main h2.teaser__title a:link:after, .content-main h2.teaser__title a:visited:after, .feature-block__block .feature-block a .feature_title:after, .feature-block__block .feature-block a .feature_title:after, .teaser__title a:after, h3 a:after, a.relatedbox h3:after  {
     padding-left: 5px;
-    font-weight: 700;
     font-size: 1.5rem;
     display: inline-block;
     font-family: "Font Awesome 5 Free";
@@ -357,7 +356,6 @@ h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title {
 
 .sidebar .region h2 {
     margin-top: 0px;
-    font-weight: 900;
     line-height: 132%;
     color: #1a1a1a;
     letter-spacing: 0;
@@ -423,7 +421,7 @@ footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[
 .scroll-to-top:hover, .scroll-to-top:focus {
     opacity: 1;
     background: #D14210;
-    border: 2px solid #D14210;
+    border: 2px solid #D15210;
     
 }
 .scroll-to-top:hover:before {
@@ -447,7 +445,6 @@ footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[
     font-family: "Font Awesome 5 Free";
     speak: none;
     font-style: normal;
-    font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
@@ -564,7 +561,6 @@ article .field--name-body {
     font-family:'Font Awesome 5 Free' !important;
     speak:none;
     font-style:normal;
-    font-weight:normal;
     font-variant:normal;
     text-transform:none;
     line-height:1;
@@ -619,8 +615,7 @@ body.path-frontpage .hero_header_section {
     color:#ffffff;
 }
 main.wrapper {
-    padding-top:60px;
-    padding-bottom: 60px;
+    padding:60px 15px;
 }
 blockquote::before, blockquote::after {
     font-family: 'Heebo',Arial,Helvetica,sans-serif;
@@ -820,7 +815,6 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
     line-height: 1.25;
     display: block;
     padding: 1.75em 2.5em;
-    color: #fff;
     font-weight: 600;
     border:none;
     margin-bottom: 30px;
@@ -843,7 +837,6 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
     font-family:'Font Awesome 5 Free' !important;
     speak:none;
     font-style:normal;
-    font-weight:normal;
     font-variant:normal;
     text-transform:none;
     line-height:1;
@@ -879,7 +872,6 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
     font-size: 60px;
     color: #ffffff;
     margin: 15px 0;
-    transition: all .2s ease-in-out;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -965,8 +957,6 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
 
 /* Homepage Slideshow */
 
-
-
 .slick--skin--fullwidth .slide__constrained {
     height: 100%;
     left: 50%;
@@ -984,8 +974,6 @@ ul.list-item li a.relatedbox:focus h3, ul.list-item li a.relatedbox:hover h3 {
     top: 0;
     z-index: 2;
 }
-
-
 
 .slide--caption--center .slide__constrained > .slide__caption, .slide--caption--center-top .slide__constrained > .slide__caption {
    left: 50%;
@@ -1131,7 +1119,7 @@ border-top: 6px solid #f5f5f5;
 
 }
 .textimage h3 a:after, .textimage h3 a[rel~="external"]:after, .textimage h3 a:hover:after {
-    padding-left:none;
+    padding-left:0;
     content:"";
 }
 
@@ -1282,7 +1270,6 @@ li.site-nav__list-item.menu-item.menu-item--expanded:hover > .site-nav__list-lev
 
 .site-nav__wrapper .site-nav__list-level-2 {
     display: none;
-    width: 100%;
     min-width: 19.5rem;
     position: absolute;
     top: 100%;
@@ -1364,7 +1351,6 @@ li.site-nav__list-item-level-2.menu-item {
     opacity: 0;
     position: absolute;
     transition: all 0.5s ease;
-    margin-top: 1rem;
     left: 0;
     display: none;
     background: #2D2F32;
@@ -1626,8 +1612,6 @@ ul.js-pager__items {
     z-index: 100;
 }
 a.mm-navbar__title {
-    width: auto;
-    height: 28px;
     padding: 32px 32px 30px 32px;
     color: #fff !IMPORTANT;
     display: table-cell;
@@ -1643,7 +1627,7 @@ ul.mm-listview {
     margin-top: 90px !IMPORTANT;
     height: calc(100% - 90px);
     padding: 8px 24px 0 24px;
-    height: calc(100% - 90px);
+
     width: calc(100% + 18px);
     box-sizing: border-box;
     background: #fff;
@@ -1682,7 +1666,6 @@ ul.mm-listview {
     height:auto;
     margin-bottom:30px;
     overflow: hidden; 
-    height: auto;
 }
 
 .ui-tabs .item-list > ul {
@@ -2053,7 +2036,6 @@ a.btn, button.btn, button.btn--secondary .button.button--large.button--wide, inp
     font-size: 1.5em;
     display: block;
     padding: 1.75em 2.5em;
-    color: #fff;
 }
 a.btn, button.btn, a.btn--secondary, a.btn--secondary, button.btn--secondary, input[type="submit"].btn   {
     display: inline-block;
@@ -2116,8 +2098,6 @@ a.btn--secondary:hover, a.button--secondary:hover, button.btn--secondary:hover {
 }
 footer a.btn {
     display:inline-block;
-    background:#000;
-    color:#fff;
     line-height:150%;
     padding:12px 30px;
     background:transparent;
@@ -2299,16 +2279,12 @@ header .header_mobile .search_icon:before {
 }
 #views-exposed-form-search-page-1 input[type='text'] {
     min-height: 70px;
-    width: 100%;
-    border: 0;
     background: #ffffff;
-    display: block;
     width: 100%;
     padding: 10px 90px 6.25px 32px;
     font-size: 18px;
     color: #353535;
     border-radius: 0;
-    display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
@@ -2318,10 +2294,7 @@ header .header_mobile .search_icon:before {
 }
 #views-exposed-form-search-page-1 .button {
     width: 90px;
-    display: -ms-flexbox;
-    display: flex;
     -ms-flex-align: center;
-    align-items: center;
     position: absolute;
     right: -30px;
     top: 0;
@@ -2377,7 +2350,6 @@ header .header_mobile .search_icon:before {
 
 
 select {
-    border: 0;
     color: #4d4d4d;
     cursor: pointer;
     margin: 0;
@@ -2395,7 +2367,6 @@ select {
     margin-bottom: 1em;
 }
 .sidebar .region .block-facets h2 {
-    font-weight:300;
     font-size: 1.5em;
     font-weight: 300;
     line-height: 125%;
@@ -2440,11 +2411,10 @@ select {
     border-bottom:none;
 }
 
-.facets-widget-links ul.item-list__links li.facet-item a.is-active:parent < li.facet-item {
-    color: #ffffff;
-    background-color: #2D2F32;
+.facets-widget-links ul.item-list__links li.facet-item a.is-active {
+    font-weight: bold;
+    color: #D14210;
 }
-
 
 .ajax-progress-fullscreen {
     left: 49%;
@@ -2560,8 +2530,6 @@ body.page-id-63 .presentedBy img {background: url(/themes/contrib/dbca_agov/img/
 /*body.page-id-79 .hero_header_section { background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.4)),#266093 url(/themes/contrib/dbca_agov/img/dbca-internal-bg.png);}*/
 body.page-id-79 .presentedBy img {background: url(/themes/contrib/dbca_agov/img/logo-science-compact.png) no-repeat; background-size: 100%;width: 100%;padding-top: 50%;height: 0;text-indent: -9999px;}
 
-
-
 .leaflet-touch .leaflet-bar a {
     margin: 0;
 	padding: 0;
@@ -2638,9 +2606,7 @@ body.page-id-79 .presentedBy img {background: url(/themes/contrib/dbca_agov/img/
 
 @media (min-width: 550px) {
 .mm-wrapper_opening .mm-menu_offcanvas.mm-menu_opened~.mm-slideout {
-    -webkit-transform: translate(0px,0);
     -ms-transform: translate(0px,0);
-    transform: translate(0px,0);
     -webkit-transform: translate3d(0px,0,0);
     transform: translate3d(0px,0,0);
 }
@@ -2664,7 +2630,6 @@ main .sidebar {
     display: inline-block;
     vertical-align: middle;
     margin: 0 60px 0 0;
-
 }
 
 }
@@ -2733,12 +2698,22 @@ main .form-wrapper {
     display: none!important;
 }
 
-.above-content{margin:20px auto;}
-.below-content {padding:50px 0;}
-body footer[role='contentinfo'] {margin-top:0;}
+.above-content{
+	margin:20px auto;
+	}
+.below-content {
+	padding:50px 0;
+	}
+body footer[role='contentinfo'] {
+	margin-top:0;
+	}
 
-main.wrapper {padding-top: 40px; }
-.ui-tabs .ui-tabs-panel {padding: 1em;}
+main.wrapper {
+	padding-top: 40px; 
+	}
+.ui-tabs .ui-tabs-panel {
+	padding: 1em;
+	}
 .item .box {
     margin-top:10px;
 }
@@ -2774,7 +2749,8 @@ a#ui-id-1:before, a#ui-id-2:before {
 }
 
 
-p.slideshow_url {    margin-top: 0;
+p.slideshow_url {    
+	margin-top: 0;
     margin-bottom: 0;
     line-height: 1em;
 }
@@ -2783,11 +2759,12 @@ p.slideshow_url {    margin-top: 0;
     bottom: 0px;
 }
 
-.slide__content {min-height:300px;}
+.slide__content {
+	min-height:300px;
+	}
 
 
-
-/* Fix homepaghe slideshow image for mobiles */
+/* Fix homepage slideshow image for mobiles */
 .slide__content {
     min-height: 300px;
     overflow: hidden;
@@ -2808,10 +2785,7 @@ p.slideshow_url {    margin-top: 0;
 }
 
 
-
 }
-
-
 
 @media print, (max-width: 975px) {
 
@@ -2822,10 +2796,7 @@ h1, .hero .site-title, .hero-sml .site-title, .hero-med .site-title, h2.slide__t
     font-size: 1.125rem;
 }
 
-
-
 }
-
 
 @media screen and (min-width: 975px) {
 header nav {
@@ -2833,9 +2804,13 @@ header nav {
 }
  .region-header nav{
     display:block
-    }
-.above-content {30px auto;}
-.below-content {margin: 30px auto 0px auto;}
+}
+.above-content {
+	margin: 30px auto;
+	}
+.below-content {
+	margin: 30px auto 0px auto;
+	}
 
 body.path-frontpage .hero_header_section {
     color: #ffffff;
@@ -2879,11 +2854,10 @@ header .header_mobile {
     padding-left: 24px;
     padding-right: 24px;
 }
-footer .pre-footer {padding-top: 40px;padding-bottom: 40px;}
+footer .pre-footer {padding-top: 40px;padding-bottom: 40px;
+	}
 
 }
-
-
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { }
@@ -2895,7 +2869,8 @@ footer .pre-footer {padding-top: 40px;padding-bottom: 40px;}
     display: flex;
     flex-direction: column; 
     margin-right: 20px;
-    width: calc(((100% / 2) - 40px) + (40px / 2) - 0.01px);}
+    width: calc(((100% / 2) - 40px) + (40px / 2) - 0.01px);
+	}
  }
 
 /* Large devices (desktops, 992px and up) */
@@ -2906,10 +2881,7 @@ footer .pre-footer {padding-top: 40px;padding-bottom: 40px;}
     flex-direction: column; 
     margin-right: 20px;
     width: calc(((100% / 3) - 30px) + (30px / 3) - 0.01px);
-}
-
-
-
+	}
 
 }
 
@@ -2921,8 +2893,7 @@ footer .pre-footer {padding-top: 40px;padding-bottom: 40px;}
     display: flex;
     flex-direction: column; 
     margin-right: 20px;
-width: calc(((100% / 4) - 40px) + (80px / 4) - 0.01px);}
+width: calc(((100% / 4) - 40px) + (80px / 4) - 0.01px);
+	}
 
 }
-
-
