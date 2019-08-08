@@ -98,6 +98,9 @@ span.field--name-title {
 display:none;
 }
 
+
+
+
 td.text-align-right {
 	text-align: right;
 }
@@ -106,7 +109,10 @@ table th.text-align-right {
 text-align: right;
 }
 
+
 /* table formating for print pdf */
+
+ 
 
 table caption {
     padding-top: .75rem;
@@ -115,35 +121,15 @@ table caption {
     text-align: left;
     caption-side: bottom;
 }
+
+
+
 table th {
     color: #fff;
     background-color: #2D2F32;
     border: 1px solid #000;
 }
 
- 
-
-.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
- 
-
-table tbody tr:nth-of-type(odd) {
-    background-color: rgba(0,0,0,.05);
-}
-
- 
-
-table tbody tr:hover {
-    background-color: rgba(0,0,0,.075);
-}
-
- 
 
 
 table {
@@ -157,10 +143,8 @@ table {
     
 }
 
- 
-
 table thead th {
-    text-align: inherit;
+    text-align: center;
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
 }
@@ -169,30 +153,21 @@ table td, table th {
     vertical-align: top;
 }
 
- 
-
 table.nostyle {
     border:none;
-
- 
 
 }
 table.nostyle tbody tr:nth-of-type(odd) {
     background-color: transparent;
 }
-
  
 
 table.nostyle tbody tr:hover {
     background-color: transparent;
 }
 
- 
-
 table.nostyle th {
     color: #000;
     background-color: transparent;
     border: none;
 }
-
-
