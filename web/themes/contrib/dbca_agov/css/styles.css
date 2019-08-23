@@ -122,21 +122,19 @@ body.path-frontpage .hero_header_section * {
 
 .fac {
     font-family: "icomoon";
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
+    font-family: 'icomoon' !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }
 
+.icon-fa-bee:before, .fa-bee:before {
+  content: "\e902";
+}
 
 .icon-fa-fox:before, .fa-fox:before  {
   content: "\e901";
@@ -159,6 +157,7 @@ body.path-frontpage .hero_header_section * {
 .icon-fa-drone-alt:before, .fa-drone-alt:before {
   content: "\f860";
 }
+
 
 
 /***** 2 - STANDARDS *****/
@@ -484,7 +483,7 @@ footer[role='contentinfo'] a:hover, footer[role='contentinfo'] a:active, footer[
     margin-top: 20px;
 }
 
-#below-content .contextual-region.layout.layout--onecol {
+#below-content .layout.layout--onecol {
     text-decoration: none!important;
     height: 100%;
     width:100%;
