@@ -2017,47 +2017,35 @@ footer[role='contentinfo'] .footer-top, #footer .footer-top {
 }
 
 /***** 9 - BUTTONS / ICONS *****/
-a.btn, button.btn, button.btn--secondary .button.button--large.button--wide, input[type="submit"].btn {
-    letter-spacing: 1px;
-    border:none;
-    font-weight:500;
-    text-decoration: none;
-    cursor:pointer;
-    line-height:1.25rem;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-}
-.button.button--large.button--wide {
-    color: #fff;
-    background: #D1420F;
-    font-size: 1.5em;
-    display: block;
-    padding: 1.75em 2.5em;
-}
-a.btn, button.btn, a.btn--secondary, a.btn--secondary, button.btn--secondary, input[type="submit"].btn   {
-    display: inline-block;
-    color: #fff;
-    font-size: 1rem;
-    padding:12px 30px;
-    cursor:pointer;
-    border-bottom:none;
-}
-a.btn, input[type="submit"].btn {
-    background: #D14210;
-}
-a.btn:hover, input[type="submit"].btn:hover, button.btn a.btn:focus, .button.button--large.button--wide:focus, .button.button--large.button--wide:hover {
-    background-color:#2D2F32;
-    color:#fff;
-}
-a.btn--secondary, a.btn--secondary, button.btn--secondary, button.btn--secondary {
-    background: #2D2F32;
+
+a.btn,.btn,input[role="button"], input[type="submit"], input[type="reset"], input[type="button"],input[type="submit"].btn,a.btn--primary,.btn--primary,a.btn--secondary, .btn--secondary, a.button,button,button.btn--primary {
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1rem;
+	line-height: 150%;
+	font-weight: 500;
+	border: 0px;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
+	padding: 12px 30px;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-a.btn--secondary:hover, a.button--secondary:hover, button.btn--secondary:hover {
-    background: #D14210;
+a.btn:hover, a.btn:focus,.btn:hover, .btn:focus,a.btn--primary:hover, a.btn--primary:focus,a.button:hover, a.button:focus, a.btn--secondary:hover, a.btn--secondary:focus,.btn--secondary:hover, .btn--secondary:focus, input[role="button"]:hover, input[role="button"]:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="reset"]:hover,  input[type="reset"]:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="submit"].btn:hover, input[type="submit"].btn:focus, button:hover, button:focus button.btn--primary:hover, button.btn--primary:focus {
+	background: #D14210;
+    cursor: pointer;
 }
+
+a.btn:focus,.btn:focus,input[role="button"]:focus,input[type="submit"]:focus,input[type="reset"]:focus,input[type="button"]:focus,input[type="submit"].btn:focus,a.btn--primary:focus,button.btn--primary:focus {
+	outline: 2px dotted #d14210!important;
+}
+
 .block {
    /* display:block !IMPORTANT; */
 }
