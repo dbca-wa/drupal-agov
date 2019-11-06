@@ -1,0 +1,105 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+
+  # Run the build and test steps.
+  build:
+    docker:
+      - image: previousnext/php:7.1-dev
+        environment:
+          SIMPLETEST_BASE_URL: http://127.0.0.1
+          SIMPLETEST_DB: mysql://root:root@127.0.0.1/local
+          BROWSERTEST_OUTPUT_DIRECTORY: build/browser_output
+
+      - image: mariadb
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: local
+          MYSQL_USER: drupal
+          MYSQL_PASSWORD: drupal
+
+      - image: previousnext/gastonjs:1.0.2
+
+    working_directory: /data
+    steps:
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - agov-v1-{{ arch }}-{{ checksum "composer.lock" }}
+            - agov-v1-{{ arch }}
+
+      - run:
+          name: "Install dependencies"
+          command: |
+            make init
+            make mkdirs
+
+      - save_cache:
+          key: agov-v1-{{ arch }}-{{ checksum "composer.lock" }}
+          paths:
+            - /root/.composer
+
+      - run:
+          name: Lint
+          command: |
+            make lint
+
+      - run:
+          name: Install
+          command: |
+            make link-profile install
+
+      - run:
+          name: Start Apache
+          command: |
+            tuner --conf=apache > /etc/apache2/mods-enabled/tuner.conf
+            tuner --conf=php > /usr/local/etc/php/conf.d/tuner.ini
+            apache2ctl start
+
+      - run:
+          name: Test PHPUnit
+          command: |
+            make test-phpunit
+
+      - store_test_results:
+          path: build/logs
+
+      - store_artifacts:
+          path: build/browser_output
+          destination: phpunit
+
+      - store_artifacts:
+          path: app/sites/default/files/simpletest/verbose/
+          destination: simpletest
+
+
+  push:
+    docker:
+      - image: previousnext/php:7.1-dev
+    working_directory: /data
+    steps:
+      - checkout
+      - run:
+          name: Push to Drupal.org
+          command: |
+            ssh-keyscan git.drupal.org >> /root/.ssh/known_hosts
+            git remote add dorg pnx-bot@git.drupal.org:project/agov.git
+            git push dorg 8.x-2.x
+
+workflows:
+  version: 2
+  build_and_push:
+    jobs:
+      - build
+      - push:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - 8.x-2.x

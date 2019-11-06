@@ -1,0 +1,21 @@
+diff --git a/core/includes/install.core.inc b/core/includes/install.core.inc
+index 1616f18..9773096 100644
+--- a/core/includes/install.core.inc
++++ b/core/includes/install.core.inc
+@@ -1033,6 +1033,16 @@ function install_verify_requirements(&$install_state) {
+  *   An array of information about the current installation state.
+  */
+ function install_base_system(&$install_state) {
++  // Clear user cache for all major platforms.
++  $user_caches = [
++    'apc_clear_cache',
++    'opcache_reset',
++    'apcu_clear_cache',
++    'wincache_ucache_clear',
++    'xcache_clear_cache',
++  ];
++  array_map('call_user_func', array_filter($user_caches, 'is_callable'));
++
+   // Install system.module.
+   drupal_install_system($install_state);
+ 

@@ -1,0 +1,16 @@
+fonts:
+  version: 1.x
+  css:
+    theme:
+       '//fonts.googleapis.com/css?family=Heebo:300,500,700,900': { type: external, minified: true }
+
+base:
+  version: 1.x
+  css:
+    theme:
+      css/styles.css: {}
+      css/print.css: {media: print}
+  js:
+    js/scripts.js: {}
+
+     

@@ -1,0 +1,604 @@
+diff --git a/config/install/core.entity_form_display.media.audio.default.yml b/config/install/core.entity_form_display.media.audio.default.yml
+new file mode 100644
+index 0000000..b3f5f64
+--- /dev/null
++++ b/config/install/core.entity_form_display.media.audio.default.yml
+@@ -0,0 +1,58 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.audio.field_media_audio_file
++    - media.type.audio
++  module:
++    - file
++    - path
++id: media.audio.default
++targetEntityType: media
++bundle: audio
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 3
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  field_media_audio_file:
++    weight: 0
++    settings:
++      progress_indicator: throbber
++    third_party_settings: {  }
++    type: file_generic
++    region: content
++  name:
++    type: string_textfield
++    weight: -5
++    region: content
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  path:
++    type: path
++    weight: 4
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  status:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 5
++    region: content
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 2
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++    region: content
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/config/install/core.entity_form_display.media.file.default.yml b/config/install/core.entity_form_display.media.file.default.yml
+new file mode 100644
+index 0000000..8b4ebe9
+--- /dev/null
++++ b/config/install/core.entity_form_display.media.file.default.yml
+@@ -0,0 +1,51 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.file.field_media_file
++    - media.type.file
++  module:
++    - file
++id: media.file.default
++targetEntityType: media
++bundle: file
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 10
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  field_media_file:
++    settings:
++      progress_indicator: throbber
++    third_party_settings: {  }
++    type: file_generic
++    weight: 0
++    region: content
++  name:
++    type: string_textfield
++    weight: -5
++    region: content
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  status:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 100
++    region: content
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 5
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++    region: content
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/config/install/core.entity_form_display.media.image.default.yml b/config/install/core.entity_form_display.media.image.default.yml
+new file mode 100644
+index 0000000..4488b02
+--- /dev/null
++++ b/config/install/core.entity_form_display.media.image.default.yml
+@@ -0,0 +1,53 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.image.field_media_image
++    - image.style.thumbnail
++    - media.type.image
++  module:
++    - image
++id: media.image.default
++targetEntityType: media
++bundle: image
++mode: default
++content:
++  created:
++    type: datetime_timestamp
++    weight: 10
++    region: content
++    settings: {  }
++    third_party_settings: {  }
++  field_media_image:
++    settings:
++      progress_indicator: throbber
++      preview_image_style: thumbnail
++    third_party_settings: {  }
++    type: image_image
++    weight: 0
++    region: content
++  name:
++    type: string_textfield
++    weight: -5
++    region: content
++    settings:
++      size: 60
++      placeholder: ''
++    third_party_settings: {  }
++  status:
++    type: boolean_checkbox
++    settings:
++      display_label: true
++    weight: 100
++    region: content
++    third_party_settings: {  }
++  uid:
++    type: entity_reference_autocomplete
++    weight: 5
++    settings:
++      match_operator: CONTAINS
++      size: 60
++      placeholder: ''
++    region: content
++    third_party_settings: {  }
++hidden: {  }
+diff --git a/config/install/core.entity_view_display.media.audio.default.yml b/config/install/core.entity_view_display.media.audio.default.yml
+new file mode 100644
+index 0000000..d77376c
+--- /dev/null
++++ b/config/install/core.entity_view_display.media.audio.default.yml
+@@ -0,0 +1,29 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.audio.field_media_audio_file
++    - media.type.audio
++  module:
++    - file
++id: media.audio.default
++targetEntityType: media
++bundle: audio
++mode: default
++content:
++  field_media_audio_file:
++    type: file_audio
++    weight: 0
++    label: visually_hidden
++    settings:
++      controls: true
++      autoplay: false
++      loop: false
++      multiple_file_display_type: tags
++    third_party_settings: {  }
++    region: content
++hidden:
++  created: true
++  name: true
++  thumbnail: true
++  uid: true
+diff --git a/config/install/core.entity_view_display.media.file.default.yml b/config/install/core.entity_view_display.media.file.default.yml
+new file mode 100644
+index 0000000..72b0bdc
+--- /dev/null
++++ b/config/install/core.entity_view_display.media.file.default.yml
+@@ -0,0 +1,25 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.file.field_media_file
++    - media.type.file
++  module:
++    - file
++id: media.file.default
++targetEntityType: media
++bundle: file
++mode: default
++content:
++  field_media_file:
++    label: visually_hidden
++    settings: {  }
++    third_party_settings: {  }
++    type: file_default
++    weight: 1
++    region: content
++hidden:
++  created: true
++  thumbnail: true
++  uid: true
++  name: true
+diff --git a/config/install/core.entity_view_display.media.image.default.yml b/config/install/core.entity_view_display.media.image.default.yml
+new file mode 100644
+index 0000000..728150f
+--- /dev/null
++++ b/config/install/core.entity_view_display.media.image.default.yml
+@@ -0,0 +1,28 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.field.media.image.field_media_image
++    - image.style.medium
++    - media.type.image
++  module:
++    - image
++id: media.image.default
++targetEntityType: media
++bundle: image
++mode: default
++content:
++  field_media_image:
++    label: visually_hidden
++    settings:
++      image_style: ''
++      image_link: file
++    third_party_settings: {  }
++    type: image
++    weight: 1
++    region: content
++hidden:
++  created: true
++  thumbnail: true
++  uid: true
++  name: true
+diff --git a/config/install/field.field.media.audio.field_media_audio_file.yml b/config/install/field.field.media.audio.field_media_audio_file.yml
+new file mode 100644
+index 0000000..5e013f3
+--- /dev/null
++++ b/config/install/field.field.media.audio.field_media_audio_file.yml
+@@ -0,0 +1,26 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.media.field_media_audio_file
++    - media.type.audio
++  module:
++    - file
++id: media.audio.field_media_audio_file
++field_name: field_media_audio_file
++entity_type: media
++bundle: audio
++label: 'Audio file'
++description: ''
++required: true
++translatable: true
++default_value: {  }
++default_value_callback: ''
++settings:
++  file_extensions: 'mp3 wav aac'
++  file_directory: '[date:custom:Y]-[date:custom:m]'
++  max_filesize: ''
++  description_field: false
++  handler: 'default:file'
++  handler_settings: {  }
++field_type: file
+diff --git a/config/install/field.field.media.file.field_media_file.yml b/config/install/field.field.media.file.field_media_file.yml
+new file mode 100644
+index 0000000..00c16ec
+--- /dev/null
++++ b/config/install/field.field.media.file.field_media_file.yml
+@@ -0,0 +1,29 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.media.field_media_file
++    - media.type.file
++  enforced:
++    module:
++      - media
++  module:
++    - file
++id: media.file.field_media_file
++field_name: field_media_file
++entity_type: media
++bundle: file
++label: File
++description: ''
++required: true
++translatable: true
++default_value: {  }
++default_value_callback: ''
++settings:
++  file_directory: '[date:custom:Y]-[date:custom:m]'
++  file_extensions: 'txt rtf doc docx ppt pptx xls xlsx pdf odf odg odp ods odt fodt fods fodp fodg key numbers pages'
++  max_filesize: ''
++  handler: 'default:file'
++  handler_settings: {  }
++  description_field: false
++field_type: file
+diff --git a/config/install/field.field.media.image.field_media_image.yml b/config/install/field.field.media.image.field_media_image.yml
+new file mode 100644
+index 0000000..f6a62cc
+--- /dev/null
++++ b/config/install/field.field.media.image.field_media_image.yml
+@@ -0,0 +1,40 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.media.field_media_image
++    - media.type.image
++  enforced:
++    module:
++      - media
++  module:
++    - image
++id: media.image.field_media_image
++field_name: field_media_image
++entity_type: media
++bundle: image
++label: Image
++description: ''
++required: true
++translatable: true
++default_value: {  }
++default_value_callback: ''
++settings:
++  alt_field: true
++  alt_field_required: true
++  title_field: false
++  title_field_required: false
++  max_resolution: ''
++  min_resolution: ''
++  default_image:
++    uuid: null
++    alt: ''
++    title: ''
++    width: null
++    height: null
++  file_directory: '[date:custom:Y]-[date:custom:m]'
++  file_extensions: 'png gif jpg jpeg'
++  max_filesize: ''
++  handler: 'default:file'
++  handler_settings: {  }
++field_type: image
+diff --git a/config/install/field.field.media.video.field_media_video_file.yml b/config/install/field.field.media.video.field_media_video_file.yml
+new file mode 100644
+index 0000000..19c3b26
+--- /dev/null
++++ b/config/install/field.field.media.video.field_media_video_file.yml
+@@ -0,0 +1,26 @@
++langcode: en
++status: true
++dependencies:
++  config:
++    - field.storage.media.field_media_video_file
++    - media.type.video
++  module:
++    - file
++id: media.video.field_media_video_file
++field_name: field_media_video_file
++entity_type: media
++bundle: video
++label: 'Video file'
++description: ''
++required: true
++translatable: true
++default_value: {  }
++default_value_callback: ''
++settings:
++  file_extensions: mp4
++  file_directory: '[date:custom:Y]-[date:custom:m]'
++  max_filesize: ''
++  description_field: false
++  handler: 'default:file'
++  handler_settings: {  }
++field_type: file
+diff --git a/config/install/field.storage.media.field_media_audio_file.yml b/config/install/field.storage.media.field_media_audio_file.yml
+new file mode 100644
+index 0000000..1626b60
+--- /dev/null
++++ b/config/install/field.storage.media.field_media_audio_file.yml
+@@ -0,0 +1,22 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - file
++    - media
++id: media.field_media_audio_file
++field_name: field_media_audio_file
++entity_type: media
++type: file
++settings:
++  target_type: file
++  display_field: false
++  display_default: false
++  uri_scheme: public
++module: file
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/install/field.storage.media.field_media_file.yml b/config/install/field.storage.media.field_media_file.yml
+new file mode 100644
+index 0000000..1fa8af9
+--- /dev/null
++++ b/config/install/field.storage.media.field_media_file.yml
+@@ -0,0 +1,25 @@
++langcode: en
++status: true
++dependencies:
++  enforced:
++    module:
++      - media
++  module:
++    - file
++    - media
++id: media.field_media_file
++field_name: field_media_file
++entity_type: media
++type: file
++settings:
++  uri_scheme: public
++  target_type: file
++  display_field: false
++  display_default: false
++module: file
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/install/field.storage.media.field_media_image.yml b/config/install/field.storage.media.field_media_image.yml
+new file mode 100644
+index 0000000..231200d
+--- /dev/null
++++ b/config/install/field.storage.media.field_media_image.yml
+@@ -0,0 +1,32 @@
++langcode: en
++status: true
++dependencies:
++  enforced:
++    module:
++      - media
++  module:
++    - file
++    - image
++    - media
++id: media.field_media_image
++field_name: field_media_image
++entity_type: media
++type: image
++settings:
++  default_image:
++    uuid: null
++    alt: ''
++    title: ''
++    width: null
++    height: null
++  target_type: file
++  display_field: false
++  display_default: false
++  uri_scheme: public
++module: image
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/install/field.storage.media.field_media_video_file.yml b/config/install/field.storage.media.field_media_video_file.yml
+new file mode 100644
+index 0000000..0ac96a1
+--- /dev/null
++++ b/config/install/field.storage.media.field_media_video_file.yml
+@@ -0,0 +1,22 @@
++langcode: en
++status: true
++dependencies:
++  module:
++    - file
++    - media
++id: media.field_media_video_file
++field_name: field_media_video_file
++entity_type: media
++type: file
++settings:
++  target_type: file
++  display_field: false
++  display_default: false
++  uri_scheme: public
++module: file
++locked: false
++cardinality: 1
++translatable: true
++indexes: {  }
++persist_with_no_fields: false
++custom_storage: false
+diff --git a/config/install/media.type.audio.yml b/config/install/media.type.audio.yml
+new file mode 100644
+index 0000000..2a9c0bd
+--- /dev/null
++++ b/config/install/media.type.audio.yml
+@@ -0,0 +1,12 @@
++langcode: en
++status: true
++dependencies: {  }
++id: audio
++label: Audio
++description: 'A locally hosted audio file.'
++source: audio_file
++queue_thumbnail_downloads: false
++new_revision: true
++source_configuration:
++  source_field: field_media_audio_file
++field_map: {  }
+diff --git a/config/install/media.type.file.yml b/config/install/media.type.file.yml
+new file mode 100644
+index 0000000..a716fc1
+--- /dev/null
++++ b/config/install/media.type.file.yml
+@@ -0,0 +1,12 @@
++langcode: en
++status: true
++dependencies: {  }
++id: file
++label: File
++description: "Use local files for reusable media."
++source: file
++queue_thumbnail_downloads: false
++new_revision: true
++source_configuration:
++  source_field: field_media_file
++field_map: {  }
+diff --git a/config/install/media.type.image.yml b/config/install/media.type.image.yml
+new file mode 100644
+index 0000000..9527f62
+--- /dev/null
++++ b/config/install/media.type.image.yml
+@@ -0,0 +1,12 @@
++langcode: en
++status: true
++dependencies: {  }
++id: image
++label: Image
++description: "Use local images for reusable media."
++source: image
++queue_thumbnail_downloads: false
++new_revision: true
++source_configuration:
++  source_field: field_media_image
++field_map: {  }

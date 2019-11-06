@@ -1,0 +1,25 @@
+name: aGov Test Profile
+type: profile
+description: 'Minimal profile for testing aGov configurable dependencies.'
+# core: 8.x
+hidden: true
+
+# @todo: Remove this in https://www.drupal.org/node/2352949
+themes:
+  - classy
+
+configurable_dependencies:
+  forum:
+    label: Forum
+    description: This is Drupals core forum module.
+    enabled: true
+
+  contact:
+    label: Contact
+    enabled: false
+
+# Information added by Drupal.org packaging script on 2018-03-28
+version: '8.x-2.0'
+core: '8.x'
+project: 'agov'
+datestamp: 1522275377
