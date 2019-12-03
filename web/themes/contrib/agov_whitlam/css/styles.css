@@ -236,6 +236,62 @@ body, html {
 }
 
 
+a {
+    background-color: transparent;
+    font-weight: 500;
+    border-bottom: dotted 2px #7f7f7f;
+    text-decoration: none;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+a:hover {
+    color: #003366;
+    border-bottom: solid 2px #003366;
+    text-decoration: none;
+}
+a:focus {
+    outline: dotted 2px #7f7f7f;
+                border-bottom: none;
+}
+.download {
+    word-wrap: break-word;
+    background-color: #003366;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 3px;
+    margin: 40px 0;
+    padding: 0;
+}
+.download h2 {
+    padding: .75rem 1.25rem;
+    color: #fff;
+    margin-top: .5rem !IMPORTANT;
+    margin-bottom: .5rem !IMPORTANT;
+    text-decoration: none;
+}
+.download .list-group  {
+    padding: 1.25rem;
+    border-top: 1px solid rgba(0,0,0,.125);
+    background-color: #fff;
+}  
+
+
+.download h2:before {
+    font-family: 'Font Awesome 5 Free' !important;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f56d";
+    font-weight: 900;
+    padding-right: 10px;
+}
+
 
 .wrapper {max-width: 100rem;}
 
@@ -393,7 +449,90 @@ main.wrapper {
 }
 
 
-@media screen and (min-width: 75em) {
+figure.caption.caption-img.align-left, figure.caption.caption-img.align-right {
+    float:none;
+}
+
+.float-left {
+    float: left!important;
+}
+.float-right {
+    float: right!important;
+}
+.float-none {
+    float: none!important;
+}
+
+
+
+
+/* Conditional sizes */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+.float-sm-left {
+    float: left!important;
+}
+.float-sm-right {
+    float: right!important;
+}
+.float-sm-none {
+    float: none!important;
+}
+
+
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+.float-md-left {
+    float: left!important;
+}
+.float-md-right {
+    float: right!important;
+}
+.float-md-none {
+    float: none!important;
+}
+
+
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+.float-lg-left {
+    float: left!important;
+}
+.float-lg-right {
+    float: right!important;
+}
+
+.float-lg-none {
+    float: none!important;
+}
+
+
+}
+
+
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+
+.float-xl-left {
+    float: left!important;
+}
+.float-xl-right {
+    float: right!important;
+}
+.float-xl-none {
+    float: none!important;
+}
+
+
 .content-main h1, .content-main .hero .site-title, .hero .content-main .site-title, .content-main .hero-sml .site-title, .hero-sml .content-main .site-title, .content-main .hero-med .site-title, .hero-med .content-main .site-title, .content-main h2, .content-main .display, .content-main h3, .content-main h4, .content-main h5, .content-main p, .content-main li, .content-main dl {
     max-width: unset;
 }
@@ -446,6 +585,7 @@ i.pdf:before {
 }
 figure.caption.caption-img.align-left {
     margin: 10px 10px 10px 0;
+    float:left;
 }
 
 figure.caption.caption-img.align-center {
@@ -455,6 +595,7 @@ figure.caption.caption-img.align-center {
 
 figure.caption.caption-img.align-right {
     margin: 10px 0 10px 10px;
+    float:right;
 }
 
 .caption > figcaption {
@@ -491,5 +632,6 @@ figure.caption.caption-img.align-right {
     margin: 0 0 10px 0;
   }
 }
+
 
 
