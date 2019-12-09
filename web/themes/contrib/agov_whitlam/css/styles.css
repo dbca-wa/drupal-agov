@@ -544,9 +544,11 @@ h1  {
 
 }
 body>main .button, footer[role='contentinfo'] .button, button, [type="button"], [type="reset"], [type="submit"] {
-    background-color: transparent;
+   /*
+ background-color: transparent;
     color: #fff;
     border-color: transparent;
+*/
 }
 
 
